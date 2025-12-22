@@ -1,6 +1,4 @@
-/* -------------------------------
-   SMOOTH SCROLLING FOR NAV LINKS
---------------------------------*/
+
 document.querySelectorAll("nav a, a[href^='#']").forEach(link => {
   link.addEventListener("click", function (e) {
     const target = document.querySelector(this.getAttribute("href"));
@@ -11,9 +9,7 @@ document.querySelectorAll("nav a, a[href^='#']").forEach(link => {
   });
 });
 
-/* -------------------------------
-   ANIMATION (Framer-Motion style)
---------------------------------*/
+
 function animateOnLoad() {
   const heroLeft = document.querySelector(".hero-left");
   const heroRight = document.querySelector(".hero-right");
@@ -40,9 +36,7 @@ function animateOnLoad() {
 }
 window.addEventListener("load", animateOnLoad);
 
-/* -------------------------------
-   PROJECT CARD HOVER LIFT
---------------------------------*/
+
 document.querySelectorAll(".project-card").forEach(card => {
   card.addEventListener("mouseenter", () => {
     card.style.transform = "translateY(-6px)";
@@ -54,9 +48,7 @@ document.querySelectorAll(".project-card").forEach(card => {
   });
 });
 
-/* -------------------------------
-   SCROLL REVEAL SECTIONS
---------------------------------*/
+
 const revealObserver = new IntersectionObserver(
   entries => {
     entries.forEach(entry => {
@@ -76,9 +68,7 @@ document.querySelectorAll(".reveal").forEach(section => {
   revealObserver.observe(section);
 });
 
-/* -------------------------------
-   CONTACT FORM VALIDATION
---------------------------------*/
+
 const form = document.querySelector("#contact-form");
 
 if (form) {
@@ -104,9 +94,6 @@ if (form) {
   });
 }
 
-/* -------------------------------
-   DARK / LIGHT MODE TOGGLE
---------------------------------*/
 const toggleBtn = document.querySelector("#theme-toggle");
 
 if (toggleBtn) {
@@ -114,3 +101,4 @@ if (toggleBtn) {
     document.documentElement.classList.toggle("dark");
   });
 }
+
