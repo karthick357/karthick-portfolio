@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio</title>
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="bg-gray-50 dark:bg-gray-900 text-gray-800 dark:text-gray-100">
+
+  <!-- HEADER -->
+   <header class="max-w-5xl mx-auto p-6 pl-10 flex items-center justify-between">
+    <h1 class="text-xl font-bold">Dinesh Karthick</h1>
+    <div class="mx-4 h-8 border-l border-gray-300 dark:border-gray-700">
+    </div>
+
+    <nav class="space-x-4 text-sm">
+      <a href="#about" class="hover:underline">About</a>
+      <a href="#projects" class="hover:underline">Projects</a>
+      <a href="#skills" class="hover:underline">Skills</a>
+      <a href="#achievements" class="hover:underline">Achievements</a>
+      <a href="#certifications" class="hover:underline">Certifications</a>
+      <a href="#contact" class="hover:underline">Contact</a>
+    </nav>
+  </header>  
+
+  <!-- MAIN -->
+  <main class="max-w-5xl mx-auto p-6">
+
+    <!-- HERO -->
+    <section id="about" class="grid md:grid-cols-2 gap-8 items-center py-12">
+      
+      <!-- Left side -->
+      <div class="fade-left">
+        <h2 class="text-4xl font-extrabold leading-tight">Hi, I’m Dinesh Karthick.</h2>
+
+        <p class="mt-4 text-lg leading-relaxed">
+         Motivated and detail oriented student seeking opportunity to apply technical skills and gain real world experience
+in software development .Eager to contribute strong programming , problem-solving and teamwork abilities to a
+dynamic tech team . I’m also curious about Cloud computing ,Gen-AI and Cybersecurity.
+        </p>
+
+        <div class="mt-6 flex gap-3">
+          <a href="https://drive.google.com/file/d/1QW41jXNtfy_R74Vee2neQnSQU0U3SAdI/view?usp=drivesdk"
+             class="inline-block px-5 py-2 rounded-lg border border-gray-300 dark:border-gray-700 shadow-sm hover:shadow-md">
+             Download Resume
+          </a>
+
+          <a href="#projects"
+             class="inline-block px-5 py-2 rounded-lg bg-indigo-600 text-white shadow hover:bg-indigo-700">
+             View Projects
+          </a>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects" class="py-8">
+      <h3 class="text-4xl font-extrabold">Projects</h3>
+
+      <div class="mt-6 grid md:grid-cols-3 gap-6">
+
+        <!-- Project 1 -->
+        <article class="card hover-move">
+          <h4 class="font-semibold">SHAREBITE</h4>
+          <p class="font-bold mt-2">
+            A Smart Food Donation & Sharing Platform to Reduce Food Waste and Hunger. 
+          </p>
+
+          <div class="font-bold mt-2">
+            <span class="tag">HTML</span>
+            <span class="tag">css</span>
+            <span class="tag">python(Flask)
+            </span>
+          </div>
+
+          <div class="mt-4 flex gap-2">
+      
+          </div>
+        </article>
+        <!-- Project 2 -->
+        <article class="card hover-move">
+          <h4 class="font-semibold">PORTFOLIO WEBSITE</h4>
+          <p class="font-bold mt-2">
+            A Personal Portfolio Website to Showcase My Projects and Skills.
+          </p>
+
+          <div class="font-bold mt-2">
+            <span class="tag">HTML</span>
+            <span class="tag">CSS</span>
+            <span class="tag">JavaScript</span>
+          </div>
+
+          <div class="mt-4 flex gap-2">
+      
+          </div> 
+        </article>
+        
+
+      </div>
+    </section>
+
+    <!-- SKILLS + ACHIEVEMENTS -->
+     <section id="skills" class="py-8">
+      <h3 class="text-4xl font-extrabold">Skills</h3>
+    <section class="py-8 grid md:grid-cols-2 gap-8">
+
+      <!-- Skills -->
+      <div id="skills" class="panel">
+
+        <p class="text-3xl font-semibold">Technical Skills</p>
+        <br>
+        <ul class="font-bold ">
+          <li class="skill">Python</li>
+          <li class="skill">C programming</li>
+          <li class="skill">Java</li>
+          <li class="skill">Linux(Basics)</li>
+          <li class="skill">Networking(Basics)</li>
+          <li class="skill">Cloud Computing (AWS Basics)</li>
+          <li class="skill">Photoshop</li>
+          <li class="skill">MS Office</li>
+
+        </ul>
+      </div>
+
+
+      <div id="skills" class="panel">
+
+        <h3 class="text-3xl font-semibold">Soft Skills</h3>
+        <br>
+        <ul class="font-bold ">
+          <li class="skill">Problem-Solving</li>
+          <li class="skill">Time Management</li>
+          <li class="skill">Communication</li>
+          <li class="skill">Teamwork</li>
+          <li class="skill">Adaptability</li>
+
+        </ul>
+      </div>
+      </section>
+
+      <!-- Achievements -->
+       <section id="achievements" class="py-8">
+      <h3 class="text-4xl font-extrabold">Achievements</h3>
+      <br/>
+      <div id="achievements" class="panel">
+
+        <ol class="font-bold list-decimal list-inside mt-4 space-y-2">
+          <li>Finalist -- Vizfest, Organized by St. Joseph’s College of Engineering</li>
+          <li>Finalist -- Ideathon, Organized  by St. Joseph’s College of Engineering.</li>
+          <li>Participated in Hackerz event, Organized by Chennai Institute of Technology.</li>
+        </ol>
+      </div>
+
+    </section>
+
+    <!-- CERTIFICATIONS -->
+
+        <section id="certifications" class="py-8">
+      <h3 class="text-4xl font-bold">Certifications</h3>
+
+      <div class="mt-4 grid md:grid-cols-2 gap-6">
+
+        <div class="panel space-y-3">
+          <h4 class="font-extrabold">AWS Educate Certifications</h4>
+          <p class="font-semibold mt-2">Completed Certifications:</p>
+          <p class="font-bold mt-2">
+            1. AWS Introduction to Cloud Computing 101<br/>
+            2. AWS Getting Started with Compute<br/>
+            3. AWS Getting Started with Storage<br/>
+            4. AWS Getting Started with Compute<br/>
+            5. AWS Getting Started with Networking<br/>
+            6. AWS Getting Started with Databases<br/>
+            7. AWS Getting Started with Cloud Ops<br/>
+            8. AWS Getting Started with Security<br/>
+            9. AWS Getting Started with Serverless Computing<br/>
+            10. AWS Cloud Practitioner Essentials<br/>
+
+            
+          </p>
+        </div>
+
+        <div class="panel space-y-3">
+          <h4 class="font-extrabold">Networking And Linux Certifications</h4>
+          <p class="font-semibold mt-2">Completed Certifications:</p>
+          <p class="font-bold mt-2">
+            1. Cisco Networking Academy- NetWorking Basics<br/>
+            2. Cisco Networking Academy- Linux Unhatched<br/>
+            3. Cisco Networking Academy- Operating Systems Support<br/>
+            
+          </p>
+        </div>
+      
+      <div class="panel space-y-3">
+          <h4 class="font-extrabold">Other Certifications</h4>
+          <p class="font-semibold mt-2">Completed Certifications:</p>
+          <p class="font-bold mt-2">
+            1. NPTEL - Python for Data science<br/>
+            2. Coursea - Python for Beginners <br/>
+            3. Infosys SpringBoard - C Programming<br/>
+            4. AWS- Cloud Practitioner Quest<br/>
+            
+          </p>
+        </div>
+      </form>
+
+      
+      <div class="panel space-y-3">
+          <h4 class="font-extrabold">To Verify my Certifications and Badges </h4>
+          <p class="font-semibold mt-2">Click the Below link:</p>
+           <div class="mt-6 flex gap-3">
+          <a href="https://www.credly.com/users/dinesh-karthick-d"
+             class="inline-block px-5 py-2 rounded-lg border border-gray-300 dark:border-gray-700 shadow-sm hover:shadow-md">
+             Credly Profile
+          </a>
+           
+            
+          </p>
+        </div>
+      </form>
+    
+
+      </div>
+    </section>
+    <!-- CONTACT -->
+    <section id="contact" class="py-8">
+      <h3 class="text-2xl font-bold">FOR CONTACT</h3>
+
+      <div class="mt-4 grid md:grid-cols-2 gap-6">
+
+        <div class="panel">
+          <h4 class="font-bold"></h4>
+          <p class="font-bold mt-2">
+            Email: <a href="mailto:karthickd179@gmail.com"class="hover:underline">karthickd179@gmail.com</a>                    
+          </p>
+          <p class="font-bold mt-2">
+            LinkedIn: <a href="https://www.linkedin.com/in/dinesh-karthick-d-3507b134a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"class="hover:underline">Dinesh karthick</a>                    
+          </p>
+        </div>
+        <br>
+
+    <footer class="mt-12 py-6 text-center text-sm opacity-80">
+      © 2025 Dinesh Karthick — Built with HTML,CSS,javascript
+    </footer>
+
+
+  </main>
+
+  <!-- JS -->
+  <script src="script.js"></script>
+
+</body>
+</html>

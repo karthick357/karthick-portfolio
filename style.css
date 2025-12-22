@@ -1,0 +1,110 @@
+
+.fade-left {
+  opacity: 0;
+  transform: translateX(-30px);
+  animation: fadeLeft 0.6s forwards;
+}
+
+@keyframes fadeLeft {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+
+.fade-scale {
+  opacity: 0;
+  transform: scale(0.95);
+  animation: fadeScale 0.6s forwards;
+}
+
+@keyframes fadeScale {
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+
+.hover-move {
+  transition: transform 0.25s ease;
+}
+
+.hover-move:hover {
+  transform: translateY(-6px);
+}
+
+
+.panel {
+  background:linear-gradient(
+  135deg,
+  #3D2F9F 0%,
+  #772481 25%,
+  #792480 50%,
+  #7C237F 75%,
+  #B61961 100%
+);
+  border-radius: 12px;
+  padding: 26px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.dark .panel {
+  background: #1f2937;
+}
+
+
+.skill {
+  padding: 8px 12px;
+  background: #792480;
+  border-radius: 8px;
+  border: 1px solid #1da2f5;
+}
+
+.dark .skill {
+  background: #374151;
+}
+
+
+.tag {
+  padding: 4px 8px;
+  font-size: 12px;
+  border-radius: 12px;
+  border: 1px solid #1da2f5;
+}
+
+
+.input {
+  margin-top: 4px;
+  width: 100%;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  padding: 10px;
+  background: #792480;
+  border: 1px solid #1da2f5;
+}
+
+.dark .input {
+  background: #111827;
+  border-color: #555;
+}
+
+
+.card {
+  background: linear-gradient(
+  135deg,
+  #3D2F9F 0%,
+  #772481 25%,
+  #792480 50%,
+  #7C237F 75%,
+  #B61961 100%
+);
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.dark .card {
+  background: #1f2937;
+}
