@@ -1,0 +1,3917 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dinesh Karthick D | Software Developer & Cloud Enthusiast Portfolio</title>
+    <meta name="description"
+        content="Dinesh Karthick D — Information Technology student & Software Developer skilled in Python, Flask, MongoDB, Web Development, AWS Cloud, and Generative AI.">
+    <meta name="keywords"
+        content="Dinesh Karthick D, Software Developer, Python, Flask, MongoDB, AWS, Cloud Computing, ShareBite, St Joseph's Institute of Technology, Chennai, Portfolio">
+    <meta name="author" content="Dinesh Karthick D">
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Dinesh Karthick D | Software Developer & Cloud Enthusiast Portfolio">
+    <meta property="og:description"
+        content="B.Tech IT student specializing in Python, Flask, MongoDB, AWS Cloud infrastructure, and modern web applications.">
+    <meta property="og:type" content="website">
+
+    <!-- Google Fonts: Outfit (Display), Plus Jakarta Sans (Body), JetBrains Mono (Code/Terminal) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Devicon for Authentic Tech Brand Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/devicon/2.15.1/devicon.min.css">
+
+    <style>
+        /* ==========================================================================
+           CSS VARIABLES & THEMES
+           ========================================================================== */
+        :root {
+            --primary: #3B82F6;
+            --primary-glow: rgba(59, 130, 246, 0.4);
+            --accent-cyan: #06B6D4;
+            --accent-purple: #8B5CF6;
+            --accent-emerald: #10B981;
+            --accent-amber: #F59E0B;
+            --radius-sm: 8px;
+            --radius-md: 14px;
+            --radius-lg: 22px;
+            --radius-pill: 9999px;
+            --font-display: 'Outfit', sans-serif;
+            --font-body: 'Plus Jakarta Sans', sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
+            --max-width: 1200px;
+            --transition-smooth: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        /* Obsidian Dark Theme (Default) */
+        html[data-theme="dark"] {
+            --bg-base: #070B14;
+            --bg-surface: #0E1626;
+            --bg-surface-elevated: #152238;
+            --bg-card: rgba(17, 27, 46, 0.7);
+            --bg-card-hover: rgba(26, 40, 68, 0.85);
+            --glass-border: rgba(255, 255, 255, 0.08);
+            --glass-border-hover: rgba(99, 102, 241, 0.45);
+            --text-main: #F1F5F9;
+            --text-muted: #94A3B8;
+            --text-dim: #64748B;
+            --header-bg: rgba(7, 11, 20, 0.8);
+            --nav-border: rgba(255, 255, 255, 0.06);
+            --chip-bg: rgba(59, 130, 246, 0.12);
+            --chip-text: #93C5FD;
+            --terminal-bg: #090E1A;
+            --card-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+            --glow-gradient: radial-gradient(circle at center, rgba(59, 130, 246, 0.15) 0%, transparent 70%);
+        }
+
+        /* Clean Light Theme */
+        html[data-theme="light"] {
+            --bg-base: #F8FAFC;
+            --bg-surface: #FFFFFF;
+            --bg-surface-elevated: #F1F5F9;
+            --bg-card: rgba(255, 255, 255, 0.9);
+            --bg-card-hover: rgba(255, 255, 255, 0.98);
+            --glass-border: rgba(15, 23, 42, 0.08);
+            --glass-border-hover: rgba(59, 130, 246, 0.4);
+            --text-main: #0F172A;
+            --text-muted: #475569;
+            --text-dim: #94A3B8;
+            --header-bg: rgba(248, 250, 252, 0.85);
+            --nav-border: rgba(15, 23, 42, 0.07);
+            --chip-bg: rgba(59, 130, 246, 0.09);
+            --chip-text: #1D4ED8;
+            --terminal-bg: #0F172A;
+            --card-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.06), 0 8px 10px -6px rgba(15, 23, 42, 0.04);
+            --glow-gradient: radial-gradient(circle at center, rgba(59, 130, 246, 0.08) 0%, transparent 70%);
+        }
+
+        /* ==========================================================================
+           RESET & BASE STYLES
+           ========================================================================== */
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background-color: var(--bg-base);
+            color: var(--text-main);
+            line-height: 1.65;
+            overflow-x: hidden;
+            transition: background-color 0.35s ease, color 0.35s ease;
+            position: relative;
+        }
+
+        #readingProgress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 3px;
+            width: 0%;
+            background: linear-gradient(90deg, var(--accent-cyan), var(--primary), var(--accent-purple));
+            z-index: 1000;
+            transition: width 0.1s ease;
+        }
+
+        #neuralCanvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+            opacity: 0.45;
+        }
+
+        .wrap {
+            width: 100%;
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 24px;
+            position: relative;
+            z-index: 1;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+            transition: var(--transition-smooth);
+        }
+
+        button {
+            font-family: inherit;
+            cursor: pointer;
+            border: none;
+            background: none;
+            outline: none;
+        }
+
+        ul,
+        ol {
+            list-style: none;
+        }
+
+        img,
+        svg {
+            display: block;
+            max-width: 100%;
+        }
+
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--bg-base);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--glass-border-hover);
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--primary);
+        }
+
+        /* Typography */
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: var(--font-display);
+            font-weight: 700;
+            line-height: 1.2;
+            color: var(--text-main);
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, #60A5FA 0%, #A78BFA 50%, #34D399 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .gradient-text-alt {
+            background: linear-gradient(135deg, #38BDF8 0%, #818CF8 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Buttons & Badges */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 13px 28px;
+            border-radius: var(--radius-pill);
+            font-size: 0.95rem;
+            font-weight: 600;
+            transition: var(--transition-smooth);
+            position: relative;
+            overflow: hidden;
+            white-space: nowrap;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #3B82F6 0%, #6366F1 100%);
+            color: #FFFFFF;
+            box-shadow: 0 4px 20px rgba(59, 130, 246, 0.35);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 28px rgba(99, 102, 241, 0.5);
+        }
+
+        .btn-secondary {
+            background: var(--bg-surface-elevated);
+            color: var(--text-main);
+            border: 1px solid var(--glass-border);
+            box-shadow: var(--card-shadow);
+        }
+
+        .btn-secondary:hover {
+            transform: translateY(-2px);
+            border-color: var(--primary);
+            color: var(--primary);
+        }
+
+        .btn-ghost {
+            background: transparent;
+            color: var(--text-muted);
+            border: 1px solid var(--glass-border);
+        }
+
+        .btn-ghost:hover {
+            color: var(--text-main);
+            border-color: var(--text-muted);
+            background: rgba(255, 255, 255, 0.03);
+        }
+
+        .btn-sm {
+            padding: 8px 18px;
+            font-size: 0.85rem;
+        }
+
+        .status-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 7px 16px;
+            border-radius: var(--radius-pill);
+            background: rgba(16, 185, 129, 0.1);
+            border: 1px solid rgba(16, 185, 129, 0.25);
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--accent-emerald);
+            margin-bottom: 20px;
+        }
+
+        .status-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--accent-emerald);
+            position: relative;
+            box-shadow: 0 0 10px var(--accent-emerald);
+        }
+
+        .status-dot::after {
+            content: '';
+            position: absolute;
+            inset: -4px;
+            border-radius: 50%;
+            background: var(--accent-emerald);
+            opacity: 0.4;
+            animation: pulseDot 2s infinite ease-out;
+        }
+
+        @keyframes pulseDot {
+            0% {
+                transform: scale(0.8);
+                opacity: 0.8;
+            }
+
+            100% {
+                transform: scale(2.4);
+                opacity: 0;
+            }
+        }
+
+        /* ==========================================================================
+           NAVBAR
+           ========================================================================== */
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            background: var(--header-bg);
+            border-bottom: 1px solid var(--nav-border);
+            transition: background 0.3s ease, border-color 0.3s ease;
+        }
+
+        nav.wrap {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 76px;
+        }
+
+        .brand-logo {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-family: var(--font-display);
+            font-size: 1.35rem;
+            font-weight: 800;
+            color: var(--text-main);
+            letter-spacing: -0.02em;
+        }
+
+        .brand-logo .code-bracket {
+            color: var(--primary);
+            font-family: var(--font-mono);
+            font-weight: 600;
+        }
+
+        .nav-menu {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+        }
+
+        .nav-link {
+            font-size: 0.92rem;
+            font-weight: 500;
+            color: var(--text-muted);
+            position: relative;
+            padding: 6px 0;
+        }
+
+        .nav-link:hover,
+        .nav-link.active {
+            color: var(--text-main);
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, var(--primary), var(--accent-cyan));
+            transition: width 0.25s ease;
+            border-radius: 2px;
+        }
+
+        .nav-link:hover::after,
+        .nav-link.active::after {
+            width: 100%;
+        }
+
+        .nav-actions {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .theme-switch {
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--bg-surface-elevated);
+            border: 1px solid var(--glass-border);
+            color: var(--text-main);
+            cursor: pointer;
+            position: relative;
+            transition: var(--transition-smooth);
+        }
+
+        .theme-switch:hover {
+            border-color: var(--primary);
+            transform: scale(1.05);
+        }
+
+        .theme-switch svg {
+            width: 19px;
+            height: 19px;
+            position: absolute;
+            transition: opacity 0.25s ease, transform 0.35s ease;
+        }
+
+        .icon-sun {
+            opacity: 0;
+            transform: rotate(-90deg) scale(0.6);
+        }
+
+        .icon-moon {
+            opacity: 1;
+            transform: rotate(0deg) scale(1);
+        }
+
+        html[data-theme="light"] .icon-sun {
+            opacity: 1;
+            transform: rotate(0deg) scale(1);
+            color: #F59E0B;
+        }
+
+        html[data-theme="light"] .icon-moon {
+            opacity: 0;
+            transform: rotate(90deg) scale(0.6);
+        }
+
+        .mobile-toggle {
+            display: none;
+            width: 42px;
+            height: 42px;
+            border-radius: 10px;
+            background: var(--bg-surface-elevated);
+            border: 1px solid var(--glass-border);
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+        }
+
+        .mobile-toggle span {
+            width: 20px;
+            height: 2px;
+            background: var(--text-main);
+            border-radius: 2px;
+            transition: var(--transition-smooth);
+        }
+
+        /* ==========================================================================
+           HERO SECTION
+           ========================================================================== */
+        .hero {
+            padding: 75px 0 80px;
+            position: relative;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1.12fr 0.88fr;
+            gap: 46px;
+            align-items: center;
+        }
+
+        .hero-intro h1 {
+            font-size: clamp(2.3rem, 4.3vw, 3.7rem);
+            letter-spacing: -0.03em;
+            margin-bottom: 18px;
+        }
+
+        .role-typer-wrap {
+            font-size: clamp(1.1rem, 2.2vw, 1.4rem);
+            font-weight: 600;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .role-typer {
+            color: var(--primary);
+            font-family: var(--font-mono);
+            font-weight: 700;
+            border-right: 2px solid var(--primary);
+            white-space: nowrap;
+            animation: blinkCursor 0.85s infinite;
+            padding-right: 4px;
+        }
+
+        @keyframes blinkCursor {
+
+            0%,
+            100% {
+                border-color: var(--primary);
+            }
+
+            50% {
+                border-color: transparent;
+            }
+        }
+
+        .hero-description {
+            font-size: 1.08rem;
+            color: var(--text-muted);
+            line-height: 1.7;
+            max-width: 580px;
+            margin-bottom: 30px;
+        }
+
+        .hero-cta-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 14px;
+            margin-bottom: 40px;
+        }
+
+        .hero-stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 16px;
+            padding-top: 24px;
+            border-top: 1px solid var(--glass-border);
+        }
+
+        .hero-stat-card {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .stat-number {
+            font-family: var(--font-display);
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--text-main);
+            display: flex;
+            align-items: baseline;
+            gap: 2px;
+        }
+
+        .stat-number span.plus {
+            color: var(--primary);
+            font-size: 1.4rem;
+        }
+
+        .stat-label {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+
+        /* ==========================================================================
+           HERO DUAL-MODE TERMINAL (SIMULATOR & LIVE INTERACTIVE CLI)
+           ========================================================================== */
+        .terminal-container {
+            background: var(--terminal-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5), 0 0 40px rgba(59, 130, 246, 0.15);
+            position: relative;
+        }
+
+        .terminal-topbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 12px 18px;
+            background: rgba(255, 255, 255, 0.03);
+            border-bottom: 1px solid var(--glass-border);
+        }
+
+        .mac-dots {
+            display: flex;
+            gap: 7px;
+        }
+
+        .mac-dots span {
+            width: 11px;
+            height: 11px;
+            border-radius: 50%;
+        }
+
+        .dot-red {
+            background: #FF5F56;
+        }
+
+        .dot-yellow {
+            background: #FFBD2E;
+        }
+
+        .dot-green {
+            background: #27C93F;
+        }
+
+        .terminal-tabs {
+            display: flex;
+            gap: 5px;
+            flex-wrap: wrap;
+        }
+
+        .terminal-tab-btn {
+            padding: 4px 10px;
+            font-family: var(--font-mono);
+            font-size: 0.73rem;
+            border-radius: 6px;
+            color: var(--text-dim);
+            background: transparent;
+            border: 1px solid transparent;
+            transition: var(--transition-smooth);
+        }
+
+        .terminal-tab-btn.active {
+            color: #93C5FD;
+            background: rgba(59, 130, 246, 0.15);
+            border-color: rgba(59, 130, 246, 0.3);
+        }
+
+        .terminal-tab-btn:hover:not(.active) {
+            color: var(--text-main);
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .terminal-content {
+            padding: 18px 20px;
+            font-family: var(--font-mono);
+            font-size: 0.8rem;
+            line-height: 1.65;
+            color: #E2E8F0;
+            min-height: 250px;
+            max-height: 290px;
+            overflow-y: auto;
+            white-space: pre-wrap;
+            background: rgba(0, 0, 0, 0.25);
+        }
+
+        .code-keyword {
+            color: #F472B6;
+            font-weight: 600;
+        }
+
+        .code-fn {
+            color: #60A5FA;
+        }
+
+        .code-str {
+            color: #34D399;
+        }
+
+        .code-num {
+            color: #FBBF24;
+        }
+
+        .code-comment {
+            color: #64748B;
+            font-style: italic;
+            display: block;
+            margin: 3px 0;
+        }
+
+        /* Interactive CLI input line */
+        .cli-input-container {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 18px;
+            background: rgba(0, 0, 0, 0.35);
+            border-top: 1px dashed var(--glass-border);
+            font-family: var(--font-mono);
+            font-size: 0.82rem;
+        }
+
+        .cli-prompt {
+            color: #10B981;
+            font-weight: 600;
+            white-space: nowrap;
+        }
+
+        .cli-input {
+            flex: 1;
+            background: transparent;
+            border: none;
+            color: #F8FAFC;
+            font-family: var(--font-mono);
+            font-size: 0.82rem;
+            outline: none;
+        }
+
+        .terminal-action-bar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 18px;
+            background: rgba(255, 255, 255, 0.02);
+            border-top: 1px solid var(--glass-border);
+        }
+
+        .run-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: linear-gradient(135deg, #10B981 0%, #059669 100%);
+            color: #FFFFFF;
+            padding: 6px 14px;
+            border-radius: var(--radius-pill);
+            font-size: 0.78rem;
+            font-weight: 600;
+            box-shadow: 0 2px 10px rgba(16, 185, 129, 0.35);
+            transition: var(--transition-smooth);
+        }
+
+        .run-btn:hover {
+            transform: scale(1.03);
+            box-shadow: 0 4px 16px rgba(16, 185, 129, 0.5);
+        }
+
+        .terminal-status {
+            font-family: var(--font-mono);
+            font-size: 0.74rem;
+            color: var(--text-dim);
+        }
+
+        /* ==========================================================================
+           SECTION COMMON STYLES
+           ========================================================================== */
+        section {
+            padding: 90px 0;
+            position: relative;
+        }
+
+        .section-header {
+            margin-bottom: 52px;
+            text-align: center;
+            max-width: 680px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .section-tag {
+            display: inline-block;
+            font-family: var(--font-mono);
+            font-size: 0.82rem;
+            font-weight: 600;
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            margin-bottom: 12px;
+        }
+
+        .section-title {
+            font-size: clamp(2rem, 3.5vw, 2.7rem);
+            letter-spacing: -0.025em;
+            margin-bottom: 14px;
+        }
+
+        .section-subtitle {
+            font-size: 1.05rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+
+        /* ==========================================================================
+           ABOUT & EDUCATION SECTION
+           ========================================================================== */
+        .about-layout {
+            display: grid;
+            grid-template-columns: 1.05fr 0.95fr;
+            gap: 48px;
+            align-items: start;
+        }
+
+        .about-bio {
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+            font-size: 1.05rem;
+            color: var(--text-muted);
+            line-height: 1.75;
+        }
+
+        .about-bio strong {
+            color: var(--text-main);
+        }
+
+        .bio-highlight-box {
+            margin-top: 10px;
+            padding: 22px;
+            border-radius: var(--radius-md);
+            background: var(--bg-card);
+            border: 1px solid var(--glass-border);
+            backdrop-filter: blur(12px);
+        }
+
+        .bio-features {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 14px;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.92rem;
+            color: var(--text-main);
+            font-weight: 500;
+        }
+
+        .feature-item svg {
+            width: 18px;
+            height: 18px;
+            color: var(--accent-emerald);
+            flex-shrink: 0;
+        }
+
+        .edu-timeline {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .edu-card {
+            padding: 24px;
+            border-radius: var(--radius-md);
+            background: var(--bg-card);
+            border: 1px solid var(--glass-border);
+            box-shadow: var(--card-shadow);
+            transition: var(--transition-smooth);
+            position: relative;
+        }
+
+        .edu-card:hover {
+            border-color: var(--glass-border-hover);
+            transform: translateY(-3px);
+        }
+
+        .edu-header {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: 14px;
+            margin-bottom: 10px;
+        }
+
+        .edu-title {
+            font-size: 1.15rem;
+            color: var(--text-main);
+            margin-bottom: 4px;
+        }
+
+        .edu-institute {
+            font-size: 0.92rem;
+            color: var(--primary);
+            font-weight: 500;
+        }
+
+        .edu-badge {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: var(--radius-pill);
+            background: rgba(59, 130, 246, 0.12);
+            color: var(--chip-text);
+            font-family: var(--font-mono);
+            font-size: 0.82rem;
+            font-weight: 600;
+            white-space: nowrap;
+        }
+
+        .edu-meta {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            margin-top: 10px;
+            padding-top: 10px;
+            border-top: 1px solid var(--glass-border);
+        }
+
+        /* ==========================================================================
+           SKILLS MATRIX
+           ========================================================================== */
+        .skills-filter-tabs {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 40px;
+        }
+
+        .skill-filter-btn {
+            padding: 8px 20px;
+            border-radius: var(--radius-pill);
+            font-size: 0.88rem;
+            font-weight: 600;
+            background: var(--bg-surface-elevated);
+            color: var(--text-muted);
+            border: 1px solid var(--glass-border);
+            transition: var(--transition-smooth);
+            cursor: pointer;
+        }
+
+        .skill-filter-btn:hover {
+            color: var(--text-main);
+            border-color: var(--primary);
+        }
+
+        .skill-filter-btn.active {
+            background: var(--primary);
+            color: #FFFFFF;
+            border-color: var(--primary);
+            box-shadow: 0 4px 14px rgba(59, 130, 246, 0.35);
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+            gap: 24px;
+        }
+
+        .skill-category-card {
+            background: var(--bg-card);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--radius-md);
+            padding: 24px;
+            box-shadow: var(--card-shadow);
+            transition: var(--transition-smooth);
+        }
+
+        .skill-category-card:hover {
+            border-color: var(--glass-border-hover);
+            transform: translateY(-4px);
+        }
+
+        .skill-category-card h3 {
+            font-size: 1.12rem;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .skill-category-card h3 .badge {
+            font-family: var(--font-mono);
+            font-size: 0.72rem;
+            font-weight: 600;
+            padding: 3px 10px;
+            border-radius: var(--radius-pill);
+            background: var(--chip-bg);
+            color: var(--chip-text);
+        }
+
+        .skill-pill-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .skill-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+            padding: 7px 13px;
+            border-radius: var(--radius-pill);
+            background: var(--bg-surface-elevated);
+            border: 1px solid var(--glass-border);
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: var(--text-main);
+            transition: var(--transition-smooth);
+        }
+
+        .skill-pill i {
+            font-size: 1rem;
+        }
+
+        .skill-pill .dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--primary);
+        }
+
+        .skill-pill:hover {
+            border-color: var(--primary);
+            color: var(--primary);
+            transform: translateY(-2px);
+        }
+
+        /* ==========================================================================
+           FEATURED PROJECTS
+           ========================================================================== */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 28px;
+        }
+
+        .glass-card {
+            background: var(--bg-card);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--radius-lg);
+            padding: 30px;
+            box-shadow: var(--card-shadow);
+            backdrop-filter: blur(14px);
+            transition: var(--transition-smooth);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .glass-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+        }
+
+        .glass-card:hover {
+            border-color: var(--glass-border-hover);
+            transform: translateY(-6px);
+            box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.4), 0 0 30px rgba(59, 130, 246, 0.15);
+        }
+
+        .project-card-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 14px;
+        }
+
+        .project-category-tag {
+            font-family: var(--font-mono);
+            font-size: 0.76rem;
+            font-weight: 600;
+            color: var(--accent-cyan);
+            background: rgba(6, 182, 212, 0.1);
+            padding: 4px 12px;
+            border-radius: var(--radius-pill);
+            border: 1px solid rgba(6, 182, 212, 0.25);
+        }
+
+        .project-title {
+            font-size: 1.35rem;
+            margin-bottom: 12px;
+            line-height: 1.3;
+        }
+
+        .project-desc {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            line-height: 1.68;
+            margin-bottom: 20px;
+        }
+
+        .project-highlights {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-bottom: 22px;
+            font-size: 0.88rem;
+            color: var(--text-muted);
+        }
+
+        .p-highlight-row {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+        }
+
+        .p-highlight-row .tag-dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--accent-cyan);
+            margin-top: 7px;
+            flex-shrink: 0;
+        }
+
+        .p-highlight-row strong {
+            color: var(--text-main);
+        }
+
+        .project-tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 7px;
+            margin-bottom: 22px;
+        }
+
+        .tech-badge {
+            font-family: var(--font-mono);
+            font-size: 0.76rem;
+            padding: 4px 10px;
+            border-radius: 6px;
+            background: var(--bg-surface-elevated);
+            border: 1px solid var(--glass-border);
+            color: var(--text-main);
+        }
+
+        .project-viz-preview {
+            background: var(--bg-surface);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--radius-md);
+            padding: 14px;
+            margin-bottom: 22px;
+        }
+
+        .viz-canvas-bar {
+            display: flex;
+            justify-content: space-between;
+            font-family: var(--font-mono);
+            font-size: 0.74rem;
+            color: var(--text-dim);
+            margin-bottom: 8px;
+        }
+
+        .pipeline-steps {
+            display: flex;
+            gap: 6px;
+        }
+
+        .p-step {
+            flex: 1;
+            padding: 6px 4px;
+            text-align: center;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--glass-border);
+            border-radius: 6px;
+            font-family: var(--font-mono);
+            font-size: 0.7rem;
+            color: var(--text-dim);
+        }
+
+        .p-step.active {
+            color: #93C5FD;
+            background: rgba(59, 130, 246, 0.12);
+            border-color: rgba(59, 130, 246, 0.35);
+        }
+
+        .project-links {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            padding-top: 16px;
+            border-top: 1px solid var(--glass-border);
+        }
+
+        .project-link-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+            font-size: 0.86rem;
+            font-weight: 600;
+            color: var(--text-main);
+            transition: var(--transition-smooth);
+        }
+
+        .project-link-btn:hover {
+            color: var(--primary);
+            gap: 9px;
+        }
+
+        .inspect-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 5px 12px;
+            border-radius: var(--radius-pill);
+            background: rgba(59, 130, 246, 0.1);
+            border: 1px solid rgba(59, 130, 246, 0.25);
+            color: var(--primary);
+            font-size: 0.78rem;
+            font-weight: 600;
+            transition: var(--transition-smooth);
+            cursor: pointer;
+        }
+
+        .inspect-btn:hover {
+            background: var(--primary);
+            color: #FFFFFF;
+        }
+
+        /* ==========================================================================
+           GITHUB ACTIVITY & REPOSITORY STATS SECTION
+           ========================================================================== */
+        .github-stats-card {
+            background: var(--bg-card);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--radius-lg);
+            padding: 32px;
+            box-shadow: var(--card-shadow);
+        }
+
+        .gh-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 24px;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+
+        .gh-profile-badge {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .gh-avatar {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: var(--bg-surface-elevated);
+            border: 1px solid var(--glass-border);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.4rem;
+        }
+
+        .gh-profile-name {
+            font-weight: 700;
+            font-size: 1.05rem;
+        }
+
+        .gh-handle {
+            font-family: var(--font-mono);
+            font-size: 0.8rem;
+            color: var(--text-dim);
+        }
+
+        /* Simulated Commit Grid */
+        .commit-heatmap-wrap {
+            background: var(--bg-surface);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--radius-md);
+            padding: 18px;
+            margin-bottom: 24px;
+            overflow-x: auto;
+        }
+
+        .commit-heatmap-title {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-size: 0.82rem;
+            font-family: var(--font-mono);
+            color: var(--text-muted);
+            margin-bottom: 12px;
+        }
+
+        .heatmap-grid {
+            display: grid;
+            grid-template-columns: repeat(26, 1fr);
+            gap: 5px;
+        }
+
+        .heatmap-cell {
+            aspect-ratio: 1;
+            border-radius: 3px;
+            background: rgba(255, 255, 255, 0.05);
+            transition: var(--transition-smooth);
+        }
+
+        .heatmap-cell:hover {
+            transform: scale(1.2);
+        }
+
+        .heatmap-cell.lvl-1 {
+            background: rgba(16, 185, 129, 0.25);
+        }
+
+        .heatmap-cell.lvl-2 {
+            background: rgba(16, 185, 129, 0.5);
+        }
+
+        .heatmap-cell.lvl-3 {
+            background: rgba(16, 185, 129, 0.75);
+        }
+
+        .heatmap-cell.lvl-4 {
+            background: #10B981;
+            box-shadow: 0 0 6px #10B981;
+        }
+
+        /* Language Breakdown Bar */
+        .lang-progress-bar {
+            display: flex;
+            height: 10px;
+            border-radius: 5px;
+            overflow: hidden;
+            margin-bottom: 12px;
+        }
+
+        .lang-segment {
+            height: 100%;
+            transition: width 0.4s ease;
+        }
+
+        .lang-legend {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+            font-size: 0.82rem;
+            font-family: var(--font-mono);
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .legend-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+        }
+
+        /* ==========================================================================
+           EXPERIENCE TIMELINE
+           ========================================================================== */
+        .timeline-container {
+            max-width: 860px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .timeline-container::before {
+            content: '';
+            position: absolute;
+            left: 20px;
+            top: 10px;
+            bottom: 10px;
+            width: 2px;
+            background: linear-gradient(180deg, var(--primary), var(--accent-purple), transparent);
+        }
+
+        .timeline-item {
+            position: relative;
+            padding-left: 60px;
+            margin-bottom: 44px;
+        }
+
+        .timeline-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .timeline-node {
+            position: absolute;
+            left: 11px;
+            top: 24px;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: var(--bg-surface-elevated);
+            border: 3px solid var(--primary);
+            box-shadow: 0 0 12px var(--primary);
+            z-index: 2;
+        }
+
+        .tl-card {
+            background: var(--bg-card);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--radius-md);
+            padding: 26px;
+            box-shadow: var(--card-shadow);
+            transition: var(--transition-smooth);
+        }
+
+        .tl-card:hover {
+            border-color: var(--glass-border-hover);
+            transform: translateX(4px);
+        }
+
+        .tl-header {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: 14px;
+            margin-bottom: 14px;
+        }
+
+        .tl-role {
+            font-size: 1.22rem;
+            color: var(--text-main);
+            margin-bottom: 4px;
+        }
+
+        .tl-company {
+            font-size: 0.95rem;
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        .tl-date {
+            font-family: var(--font-mono);
+            font-size: 0.8rem;
+            padding: 4px 12px;
+            border-radius: var(--radius-pill);
+            background: rgba(59, 130, 246, 0.12);
+            color: var(--chip-text);
+            white-space: nowrap;
+        }
+
+        .tl-bullet-list {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            line-height: 1.65;
+            margin-bottom: 18px;
+        }
+
+        .tl-bullet-list li {
+            position: relative;
+            padding-left: 20px;
+        }
+
+        .tl-bullet-list li::before {
+            content: '▹';
+            position: absolute;
+            left: 0;
+            color: var(--primary);
+            font-weight: bold;
+        }
+
+        .tl-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        /* ==========================================================================
+           CERTIFICATIONS & ACHIEVEMENTS
+           ========================================================================== */
+        .awards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+            gap: 24px;
+        }
+
+        .skillrack-banner {
+            grid-column: 1 / -1;
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.15) 0%, rgba(139, 92, 246, 0.15) 100%);
+            border: 1px solid rgba(99, 102, 241, 0.35);
+            border-radius: var(--radius-lg);
+            padding: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 24px;
+            flex-wrap: wrap;
+        }
+
+        .skillrack-info h3 {
+            font-size: 1.4rem;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .skillrack-badge {
+            font-family: var(--font-mono);
+            font-size: 0.78rem;
+            background: #10B981;
+            color: #FFFFFF;
+            padding: 3px 10px;
+            border-radius: var(--radius-pill);
+        }
+
+        .skillrack-info p {
+            color: var(--text-muted);
+            font-size: 0.96rem;
+            max-width: 680px;
+        }
+
+        .award-card {
+            background: var(--bg-card);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--radius-md);
+            padding: 24px;
+            box-shadow: var(--card-shadow);
+            transition: var(--transition-smooth);
+            display: flex;
+            gap: 16px;
+            align-items: flex-start;
+        }
+
+        .award-card:hover {
+            border-color: var(--glass-border-hover);
+            transform: translateY(-4px);
+        }
+
+        .award-icon-box {
+            width: 48px;
+            height: 48px;
+            border-radius: var(--radius-sm);
+            background: var(--bg-surface-elevated);
+            border: 1px solid var(--glass-border);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.4rem;
+            flex-shrink: 0;
+        }
+
+        .award-details h4 {
+            font-size: 1.05rem;
+            margin-bottom: 4px;
+        }
+
+        .award-issuer {
+            font-size: 0.85rem;
+            color: var(--primary);
+            font-weight: 500;
+            margin-bottom: 8px;
+        }
+
+        .award-link {
+            font-family: var(--font-mono);
+            font-size: 0.78rem;
+            color: var(--accent-cyan);
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .award-link:hover {
+            text-decoration: underline;
+        }
+
+        /* ==========================================================================
+           CONTACT SECTION
+           ========================================================================== */
+        .contact-container {
+            background: var(--bg-card);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--radius-lg);
+            padding: 44px;
+            box-shadow: var(--card-shadow);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 44px;
+            align-items: center;
+        }
+
+        .contact-header {
+            margin-bottom: 30px;
+        }
+
+        .contact-header h2 {
+            font-size: 2.1rem;
+            margin-bottom: 12px;
+        }
+
+        .contact-header p {
+            color: var(--text-muted);
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        .contact-methods {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .contact-item-card {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 16px 20px;
+            background: var(--bg-surface-elevated);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--radius-md);
+            transition: var(--transition-smooth);
+        }
+
+        .contact-item-card:hover {
+            border-color: var(--primary);
+        }
+
+        .contact-item-left {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+
+        .contact-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(59, 130, 246, 0.1);
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .contact-meta .label {
+            display: block;
+            font-size: 0.75rem;
+            color: var(--text-dim);
+            text-transform: uppercase;
+            font-family: var(--font-mono);
+        }
+
+        .contact-meta .value {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--text-main);
+        }
+
+        .copy-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 6px 14px;
+            border-radius: var(--radius-pill);
+            background: var(--bg-surface);
+            border: 1px solid var(--glass-border);
+            color: var(--text-muted);
+            font-size: 0.78rem;
+            font-weight: 600;
+            transition: var(--transition-smooth);
+        }
+
+        .copy-btn:hover {
+            color: var(--text-main);
+            border-color: var(--primary);
+        }
+
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .form-group label {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--text-muted);
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 13px 18px;
+            background: var(--bg-surface-elevated);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--radius-sm);
+            color: var(--text-main);
+            font-family: inherit;
+            font-size: 0.95rem;
+            transition: var(--transition-smooth);
+            outline: none;
+        }
+
+        .form-control:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
+        }
+
+        textarea.form-control {
+            min-height: 110px;
+            resize: vertical;
+        }
+
+        /* ==========================================================================
+           INTERACTIVE MODALS (RESUME VIEWER & ARCHITECTURE INSPECTOR)
+           ========================================================================== */
+        .modal-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(7, 11, 20, 0.82);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            z-index: 10000;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 24px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .modal-overlay.active {
+            display: flex;
+            opacity: 1;
+        }
+
+        .modal-container {
+            background: var(--bg-surface);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--radius-lg);
+            width: 100%;
+            max-width: 920px;
+            max-height: 90vh;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.6);
+            transform: translateY(20px) scale(0.98);
+            transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            overflow: hidden;
+        }
+
+        .modal-overlay.active .modal-container {
+            transform: translateY(0) scale(1);
+        }
+
+        .modal-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 18px 24px;
+            border-bottom: 1px solid var(--glass-border);
+            background: var(--bg-surface-elevated);
+        }
+
+        .modal-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+        }
+
+        .modal-close-btn {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--bg-surface);
+            border: 1px solid var(--glass-border);
+            color: var(--text-muted);
+            cursor: pointer;
+            transition: var(--transition-smooth);
+        }
+
+        .modal-close-btn:hover {
+            color: var(--text-main);
+            border-color: var(--primary);
+        }
+
+        .modal-body {
+            padding: 24px;
+            overflow-y: auto;
+            flex: 1;
+        }
+
+        /* Resume Iframe */
+        .resume-iframe {
+            width: 100%;
+            height: 70vh;
+            border: none;
+            border-radius: var(--radius-sm);
+            background: #FFFFFF;
+        }
+
+        /* Architecture Inspector Tabs */
+        .arch-tab-group {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--glass-border);
+            padding-bottom: 12px;
+        }
+
+        .arch-tab-btn {
+            padding: 6px 16px;
+            border-radius: var(--radius-pill);
+            font-size: 0.85rem;
+            font-weight: 600;
+            background: var(--bg-surface-elevated);
+            color: var(--text-muted);
+            border: 1px solid var(--glass-border);
+            cursor: pointer;
+            transition: var(--transition-smooth);
+        }
+
+        .arch-tab-btn.active {
+            background: var(--primary);
+            color: #FFFFFF;
+            border-color: var(--primary);
+        }
+
+        .arch-code-block {
+            background: var(--terminal-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--radius-md);
+            padding: 18px;
+            font-family: var(--font-mono);
+            font-size: 0.82rem;
+            line-height: 1.6;
+            color: #E2E8F0;
+            overflow-x: auto;
+            white-space: pre;
+        }
+
+        /* ==========================================================================
+           FOOTER
+           ========================================================================== */
+        footer {
+            padding: 60px 0 40px;
+            background: var(--bg-surface);
+            border-top: 1px solid var(--glass-border);
+            position: relative;
+            z-index: 1;
+        }
+
+        .footer-top {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 24px;
+            padding-bottom: 36px;
+            border-bottom: 1px solid var(--glass-border);
+            margin-bottom: 30px;
+        }
+
+        .footer-brand p {
+            color: var(--text-muted);
+            font-size: 0.92rem;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 22px;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        .footer-links a:hover {
+            color: var(--primary);
+        }
+
+        .back-to-top {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: var(--bg-surface-elevated);
+            border: 1px solid var(--glass-border);
+            color: var(--text-main);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: var(--transition-smooth);
+        }
+
+        .back-to-top:hover {
+            border-color: var(--primary);
+            color: var(--primary);
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 16px;
+            font-size: 0.85rem;
+            color: var(--text-dim);
+        }
+
+        .live-clock {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-family: var(--font-mono);
+            font-size: 0.82rem;
+            color: var(--text-muted);
+        }
+
+        .live-clock .indicator {
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: var(--accent-emerald);
+        }
+
+        /* Toast Notifications */
+        #toastContainer {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            z-index: 99999;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .toast {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 20px;
+            background: var(--bg-surface-elevated);
+            border: 1px solid var(--primary);
+            border-radius: var(--radius-sm);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+            color: var(--text-main);
+            font-size: 0.9rem;
+            font-weight: 500;
+            animation: slideInToast 0.3s ease-out;
+        }
+
+        @keyframes slideInToast {
+            from {
+                opacity: 0;
+                transform: translateY(15px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Scroll Reveal */
+        .reveal-on-scroll {
+            opacity: 0;
+            transform: translateY(24px);
+            transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .reveal-on-scroll.revealed {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .hero-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .hero-terminal-wrapper {
+                max-width: 650px;
+                margin: 0 auto;
+                width: 100%;
+            }
+
+            .about-layout {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 36px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            nav.wrap {
+                height: 68px;
+            }
+
+            .nav-menu {
+                position: fixed;
+                top: 68px;
+                left: 0;
+                right: 0;
+                background: var(--header-bg);
+                backdrop-filter: blur(20px);
+                -webkit-backdrop-filter: blur(20px);
+                flex-direction: column;
+                padding: 24px;
+                gap: 18px;
+                border-bottom: 1px solid var(--nav-border);
+                transform: translateY(-120%);
+                transition: transform 0.35s ease;
+                z-index: 99;
+            }
+
+            .nav-menu.open {
+                transform: translateY(0);
+            }
+
+            .mobile-toggle {
+                display: flex;
+            }
+
+            .hero {
+                padding: 50px 0 60px;
+            }
+
+            .hero-stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 16px;
+            }
+
+            .bio-features {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-container {
+                padding: 28px 20px;
+            }
+
+            .hero-cta-group .btn {
+                width: 100%;
+            }
+
+            .heatmap-grid {
+                grid-template-columns: repeat(13, 1fr);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Reading Progress Bar -->
+    <div id="readingProgress"></div>
+
+    <!-- Interactive Background Canvas (Neural Nodes / Connected Particles) -->
+    <canvas id="neuralCanvas"></canvas>
+
+    <!-- ==========================================================================
+       HEADER & NAVIGATION
+       ========================================================================== -->
+    <header>
+        <nav class="wrap">
+            <a href="#top" class="brand-logo" aria-label="Dinesh Karthick D Homepage">
+                <span class="code-bracket">&lt;</span>Dinesh<span class="gradient-text">.dev</span><span
+                    class="code-bracket">/&gt;</span>
+            </a>
+
+            <!-- Desktop Nav Links -->
+            <div class="nav-menu" id="navMenu">
+                <a href="#about" class="nav-link">About</a>
+                <a href="#skills" class="nav-link">Skills</a>
+                <a href="#projects" class="nav-link">Projects</a>
+                <a href="#github-activity" class="nav-link">Code Activity</a>
+                <a href="#experience" class="nav-link">Experience</a>
+                <a href="#certifications" class="nav-link">Certifications</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </div>
+
+            <!-- Action Group -->
+            <div class="nav-actions">
+                <!-- Resume Modal Trigger Button -->
+                <button class="btn btn-primary btn-sm" id="openResumeModalBtn" title="Preview Resume in modal">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                        <polyline points="14 2 14 8 20 8"></polyline>
+                        <line x1="16" y1="13" x2="8" y2="13"></line>
+                        <line x1="16" y1="17" x2="8" y2="17"></line>
+                        <polyline points="10 9 9 9 8 9"></polyline>
+                    </svg>
+                    <span>Resume</span>
+                </button>
+
+                <!-- Theme Toggle Button -->
+                <button class="theme-switch" id="themeToggle" aria-label="Toggle dark/light theme" title="Toggle theme">
+                    <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                    <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                </button>
+
+                <!-- Mobile Menu Hamburger -->
+                <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle navigation menu"
+                    aria-expanded="false">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <main id="top">
+        <!-- ==========================================================================
+         HERO SECTION
+         ========================================================================== -->
+        <section class="hero">
+            <div class="wrap hero-grid">
+                <!-- Hero Introduction Left -->
+                <div class="hero-intro">
+                    <div class="status-pill">
+                        <span class="status-dot"></span>
+                        <span>Open for Software Development & Cloud Roles</span>
+                    </div>
+
+                    <h1>
+                        Engineering Resilient <span class="gradient-text">Cloud & Software</span> Systems.
+                    </h1>
+
+                    <div class="role-typer-wrap">
+                        <span>Specializing in</span>
+                        <span class="role-typer" id="roleTyper">Software Development</span>
+                    </div>
+
+                    <p class="hero-description">
+                        Hi, I'm <strong>Dinesh Karthick D</strong>. A motivated and detail-oriented Information
+                        Technology student at <strong>St. Joseph's Institute of Technology, Chennai</strong>. Passionate
+                        about architecting scalable backend APIs, full-stack platforms with Python & Flask, and
+                        exploring modern Cloud Computing (AWS), Gen-AI, and Cybersecurity.
+                    </p>
+
+                    <div class="hero-cta-group">
+                        <a href="#projects" class="btn btn-primary">
+                            <span>Explore Projects</span>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                                <polyline points="12 5 19 12 12 19"></polyline>
+                            </svg>
+                        </a>
+                        <button class="btn btn-secondary" id="heroResumeBtn">
+                            <span>View Resume PDF</span>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                <polyline points="15 3 21 3 21 9"></polyline>
+                                <line x1="10" y1="14" x2="21" y2="3"></line>
+                            </svg>
+                        </button>
+                        <a href="#contact" class="btn btn-ghost">Get In Touch</a>
+                    </div>
+
+                    <!-- Hero Metrics Bar -->
+                    <div class="hero-stats-grid">
+                        <div class="hero-stat-card">
+                            <div class="stat-number"><span class="counter" data-target="8.4">8.4</span><span
+                                    style="font-size:1rem;color:var(--text-dim);">/10</span></div>
+                            <div class="stat-label">B.Tech IT CGPA</div>
+                        </div>
+                        <div class="hero-stat-card">
+                            <div class="stat-number"><span class="counter" data-target="15">15</span><span
+                                    class="plus">+</span>
+                            </div>
+                            <div class="stat-label">AWS Courses Done</div>
+                        </div>
+                        <div class="hero-stat-card">
+                            <div class="stat-number"><span class="counter" data-target="2">2</span></div>
+                            <div class="stat-label">Industry Internships</div>
+                        </div>
+                        <div class="hero-stat-card">
+                            <div class="stat-number"><span class="counter" data-target="30">30</span><span
+                                    class="plus">d</span></div>
+                            <div class="stat-label">AWS Cloud Challenge</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hero Interactive Terminal Widget with Typeable CLI Console Right -->
+                <div class="hero-terminal-wrapper">
+                    <div class="terminal-container">
+                        <div class="terminal-topbar">
+                            <div class="mac-dots">
+                                <span class="dot-red"></span>
+                                <span class="dot-yellow"></span>
+                                <span class="dot-green"></span>
+                            </div>
+                            <div class="terminal-tabs">
+                                <button class="terminal-tab-btn active"
+                                    data-tab="tab-sharebite">sharebite_app.py</button>
+                                <button class="terminal-tab-btn" data-tab="tab-aws">aws_cloud_ops.py</button>
+                                <button class="terminal-tab-btn" data-tab="tab-cisco">cisco_net_audit.sh</button>
+                                <button class="terminal-tab-btn" data-tab="tab-cli"
+                                    style="color:var(--accent-emerald);">⚡ interactive-cli</button>
+                            </div>
+                        </div>
+
+                        <!-- Tab Content Output Area -->
+                        <div class="terminal-content" id="terminalOutput">
+                            <span class="code-comment"># Dinesh Karthick D — ShareBite Full-Stack Platform</span>
+                            <span class="code-keyword">from</span> flask <span class="code-keyword">import</span> Flask,
+                            request, jsonify
+                            <span class="code-keyword">from</span> pymongo <span class="code-keyword">import</span>
+                            MongoClient
+
+                            app = <span class="code-fn">Flask</span>(__name__)
+                            client = <span class="code-fn">MongoClient</span>(<span
+                                class="code-str">"mongodb+srv://dinesh:cluster.mongodb.net"</span>)
+                            db = client[<span class="code-str">"sharebite_db"</span>]
+
+                            <span class="code-comment"># Surplus donation dispatch API endpoint</span>
+                            <span class="code-keyword">@app.route</span>(<span class="code-str">"/api/v1/donate"</span>,
+                            methods=[<span class="code-str">"POST"</span>])
+                            <span class="code-keyword">def</span> <span class="code-fn">dispatch_donation</span>():
+                            payload = request.<span class="code-fn">get_json</span>()
+                            record = db.donations.<span class="code-fn">insert_one</span>(payload)
+                            <span class="code-keyword">return</span> <span class="code-fn">jsonify</span>({<span
+                                class="code-str">"status"</span>: <span class="code-str">"matched"</span>, <span
+                                class="code-str">"id"</span>: <span class="code-fn">str</span>(record.inserted_id)})
+                            <span class="code-comment">&gt;&gt;&gt; Ready. Click "Run Pipeline" or switch to "⚡
+                                interactive-cli" to type live commands!</span>
+                        </div>
+
+                        <!-- Typeable CLI Input Bar -->
+                        <div class="cli-input-container">
+                            <span class="cli-prompt">dinesh@portfolio:~$</span>
+                            <input type="text" class="cli-input" id="terminalCliInput"
+                                placeholder="Type 'help', 'skills', 'projects', or 'sudo hire dinesh'..."
+                                autocomplete="off" spellcheck="false">
+                        </div>
+
+                        <div class="terminal-action-bar">
+                            <button class="run-btn" id="runTerminalBtn">
+                                <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
+                                    <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                                </svg>
+                                <span>Run Pipeline</span>
+                            </button>
+                            <div class="terminal-status" id="terminalStatus">Status: Idle</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==========================================================================
+         ABOUT & ACADEMIC PATH
+         ========================================================================== -->
+        <section id="about">
+            <div class="wrap">
+                <div class="section-header reveal-on-scroll">
+                    <span class="section-tag">About Me</span>
+                    <h2 class="section-title">Driven by Curiosity, Powered by Cloud & Code</h2>
+                    <p class="section-subtitle">Combining software engineering fundamentals, database architecture, and
+                        active exploration of Cloud Computing and Gen-AI.</p>
+                </div>
+
+                <div class="about-layout">
+                    <!-- Left Bio -->
+                    <div class="about-bio reveal-on-scroll">
+                        <p>
+                            I am a motivated and detail-oriented Information Technology student at <strong>St. Joseph's
+                                Institute of Technology, Chennai</strong>, maintaining an <strong>8.4 CGPA</strong>. I
+                            seek opportunities to apply my technical skills, gain real-world experience, and contribute
+                            to dynamic software engineering teams.
+                        </p>
+                        <p>
+                            From developing full-stack platforms like <strong>ShareBite</strong> (connecting food donors
+                            with recipient shelters using Flask & MongoDB) to completing the <strong>30 Days AWS Cloud
+                                Challenge</strong> and <strong>15+ AWS certifications</strong>, I thrive when building
+                            scalable, purposeful systems.
+                        </p>
+                        <p>
+                            I am deeply curious about <strong>Cloud Computing</strong>, <strong>Generative AI</strong>,
+                            and <strong>Cybersecurity</strong>, constantly strengthening my problem-solving abilities
+                            and expanding my knowledge of modern cloud-native architectures.
+                        </p>
+
+                        <div class="bio-highlight-box">
+                            <h4 style="font-size:1.05rem;margin-bottom:12px;color:var(--text-main);">Core Strengths</h4>
+                            <div class="bio-features">
+                                <div class="feature-item">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                                        <polyline points="20 6 9 17 4 12"></polyline>
+                                    </svg>
+                                    <span>Python & Flask Backend APIs</span>
+                                </div>
+                                <div class="feature-item">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                                        <polyline points="20 6 9 17 4 12"></polyline>
+                                    </svg>
+                                    <span>SQL & MongoDB Data Modeling</span>
+                                </div>
+                                <div class="feature-item">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                                        <polyline points="20 6 9 17 4 12"></polyline>
+                                    </svg>
+                                    <span>AWS Cloud Storage & Compute</span>
+                                </div>
+                                <div class="feature-item">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                                        <polyline points="20 6 9 17 4 12"></polyline>
+                                    </svg>
+                                    <span>Linux & Networking Fundamentals</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Education Breakdown -->
+                    <div class="edu-timeline reveal-on-scroll">
+                        <!-- College -->
+                        <div class="edu-card">
+                            <div class="edu-header">
+                                <div>
+                                    <h3 class="edu-title">Bachelor of Information Technology</h3>
+                                    <div class="edu-institute">St. Joseph's Institute of Technology, Chennai</div>
+                                </div>
+                                <span class="edu-badge">CGPA: 8.4 / 10</span>
+                            </div>
+                            <p style="font-size:0.9rem;color:var(--text-muted);margin-top:6px;">
+                                Rigorous coursework in Data Structures, Object-Oriented Programming, Database Systems,
+                                Computer Networks, and Cloud Infrastructure.
+                            </p>
+                            <div class="edu-meta">
+                                <span>2024 – Present</span>
+                                <span>Chennai, India</span>
+                            </div>
+                        </div>
+
+                        <!-- School HSC -->
+                        <div class="edu-card">
+                            <div class="edu-header">
+                                <div>
+                                    <h3 class="edu-title">Higher Secondary Certificate (Class XII)</h3>
+                                    <div class="edu-institute">St. Peter's Matriculation Higher Secondary School,
+                                        Chennai</div>
+                                </div>
+                                <span class="edu-badge">Score: 78%</span>
+                            </div>
+                            <p style="font-size:0.9rem;color:var(--text-muted);margin-top:6px;">
+                                Tamil Nadu State Board. Strong foundation in Computer Science, Mathematics, and Physics
+                                with high analytical aptitude.
+                            </p>
+                            <div class="edu-meta">
+                                <span>2023 – 2024</span>
+                                <span>Chennai, India</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==========================================================================
+         SKILLS MATRIX
+         ========================================================================== -->
+        <section id="skills" style="background: var(--bg-surface);">
+            <div class="wrap">
+                <div class="section-header reveal-on-scroll">
+                    <span class="section-tag">Technical Competency</span>
+                    <h2 class="section-title">Skills & Technologies</h2>
+                    <p class="section-subtitle">Hands-on technologies, programming languages, and cloud platforms
+                        leveraged across projects, internships, and certifications.</p>
+                </div>
+
+                <!-- Filter Tabs -->
+                <div class="skills-filter-tabs reveal-on-scroll">
+                    <button class="skill-filter-btn active" data-filter="all">All Skills</button>
+                    <button class="skill-filter-btn" data-filter="lang">Languages</button>
+                    <button class="skill-filter-btn" data-filter="web">Web & Backend</button>
+                    <button class="skill-filter-btn" data-filter="cloud">Cloud & AI</button>
+                    <button class="skill-filter-btn" data-filter="tools">Databases & Tools</button>
+                </div>
+
+                <div class="skills-grid" id="skillsGrid">
+                    <!-- Languages -->
+                    <div class="skill-category-card reveal-on-scroll" data-group="lang">
+                        <h3>Programming Languages <span class="badge">Core</span></h3>
+                        <div class="skill-pill-list">
+                            <span class="skill-pill"><i class="devicon-python-plain colored"></i>Python</span>
+                            <span class="skill-pill"><i class="devicon-java-plain colored"></i>Java</span>
+                            <span class="skill-pill"><i class="devicon-c-plain colored"></i>C</span>
+                            <span class="skill-pill"><i class="devicon-mysql-plain colored"></i>SQL (MySQL)</span>
+                        </div>
+                    </div>
+
+                    <!-- Web & Backend -->
+                    <div class="skill-category-card reveal-on-scroll" data-group="web">
+                        <h3>Web Development <span class="badge">Full-Stack</span></h3>
+                        <div class="skill-pill-list">
+                            <span class="skill-pill"><i class="devicon-html5-plain colored"></i>HTML5</span>
+                            <span class="skill-pill"><i class="devicon-css3-plain colored"></i>CSS3</span>
+                            <span class="skill-pill"><i class="devicon-javascript-plain colored"></i>JavaScript</span>
+                            <span class="skill-pill"><i class="devicon-flask-original colored"></i>Flask</span>
+                            <span class="skill-pill"><span class="dot"></span>RESTful APIs</span>
+                            <span class="skill-pill"><span class="dot"></span>PyMongo</span>
+                        </div>
+                    </div>
+
+                    <!-- Cloud & AI -->
+                    <div class="skill-category-card reveal-on-scroll" data-group="cloud">
+                        <h3>Cloud & AI <span class="badge">AWS Certified</span></h3>
+                        <div class="skill-pill-list">
+                            <span class="skill-pill"><i class="devicon-amazonwebservices-original colored"></i>AWS
+                                Cloud</span>
+                            <span class="skill-pill"><span class="dot"></span>AWS Storage (S3)</span>
+                            <span class="skill-pill"><span class="dot"></span>AWS Compute (EC2)</span>
+                            <span class="skill-pill"><span class="dot"></span>Generative AI</span>
+                            <span class="skill-pill"><span class="dot"></span>AI/ML Fundamentals</span>
+                            <span class="skill-pill"><span class="dot"></span>Cybersecurity Basics</span>
+                        </div>
+                    </div>
+
+                    <!-- Databases & Tools -->
+                    <div class="skill-category-card reveal-on-scroll" data-group="tools">
+                        <h3>Databases & Tools <span class="badge">Infrastructure</span></h3>
+                        <div class="skill-pill-list">
+                            <span class="skill-pill"><i class="devicon-mongodb-plain colored"></i>MongoDB</span>
+                            <span class="skill-pill"><i class="devicon-mysql-plain colored"></i>MySQL</span>
+                            <span class="skill-pill"><i class="devicon-git-plain colored"></i>Git</span>
+                            <span class="skill-pill"><i class="devicon-github-original colored"></i>GitHub</span>
+                            <span class="skill-pill"><span class="dot"></span>Microsoft Excel</span>
+                            <span class="skill-pill"><i class="devicon-vscode-plain colored"></i>VS Code</span>
+                        </div>
+                    </div>
+
+                    <!-- Systems & Foundations -->
+                    <div class="skill-category-card reveal-on-scroll" data-group="tools">
+                        <h3>Systems & Concepts <span class="badge">Foundations</span></h3>
+                        <div class="skill-pill-list">
+                            <span class="skill-pill"><i class="devicon-linux-plain colored"></i>Linux (Cisco)</span>
+                            <span class="skill-pill"><span class="dot"></span>Computer Networks</span>
+                            <span class="skill-pill"><span class="dot"></span>Problem Solving</span>
+                            <span class="skill-pill"><span class="dot"></span>Team Collaboration</span>
+                            <span class="skill-pill"><span class="dot"></span>Agile Prototyping</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==========================================================================
+         FEATURED PROJECTS
+         ========================================================================== -->
+        <section id="projects">
+            <div class="wrap">
+                <div class="section-header reveal-on-scroll">
+                    <span class="section-tag">Featured Work</span>
+                    <h2 class="section-title">Engineered Real-World Projects</h2>
+                    <p class="section-subtitle">Full-stack web applications, cloud-powered backends, and responsive user
+                        experiences with deep architecture inspection.</p>
+                </div>
+
+                <div class="projects-grid">
+                    <!-- Project 1: SHAREBITE -->
+                    <div class="glass-card reveal-on-scroll">
+                        <div>
+                            <div class="project-card-header">
+                                <span class="project-category-tag">Full-Stack & Social Impact</span>
+                                <span style="font-family:var(--font-mono);font-size:0.8rem;color:var(--text-dim);">Live
+                                    Project</span>
+                            </div>
+                            <h3 class="project-title">SHAREBITE: Food Donation & Delivery Tracking Platform</h3>
+                            <p class="project-desc">
+                                Developed an end-to-end full-stack food redistribution platform connecting surplus food
+                                donors (banquet halls, caterers, restaurants) with recipient orphanages and community
+                                shelters to actively curb food waste.
+                            </p>
+
+                            <div class="project-highlights">
+                                <div class="p-highlight-row">
+                                    <span class="tag-dot"></span>
+                                    <span><strong>Flask & PyMongo Backend:</strong> Engineered RESTful API endpoints for
+                                        instant surplus food logging, verification, and live tracking.</span>
+                                </div>
+                                <div class="p-highlight-row">
+                                    <span class="tag-dot"></span>
+                                    <span><strong>MongoDB Persistence:</strong> Architected structured document schemas
+                                        managing donor inventories, pickup locations, and recipient claims.</span>
+                                </div>
+                            </div>
+
+                            <div class="project-tech-stack">
+                                <span class="tech-badge">Python</span>
+                                <span class="tech-badge">Flask</span>
+                                <span class="tech-badge">MongoDB</span>
+                                <span class="tech-badge">PyMongo</span>
+                                <span class="tech-badge">HTML5</span>
+                                <span class="tech-badge">CSS3</span>
+                                <span class="tech-badge">JavaScript</span>
+                            </div>
+                        </div>
+
+                        <!-- Architecture Flow Visualization -->
+                        <div>
+                            <div class="project-viz-preview">
+                                <div class="viz-canvas-bar">
+                                    <span>Redistribution Pipeline:</span>
+                                    <span style="color:var(--accent-emerald);">Active Pipeline</span>
+                                </div>
+                                <div class="pipeline-steps">
+                                    <div class="p-step active">1. Surplus Log</div>
+                                    <div class="p-step active">2. PyMongo DB</div>
+                                    <div class="p-step active">3. Recipient Match</div>
+                                    <div class="p-step active">4. Dispatch</div>
+                                </div>
+                            </div>
+
+                            <div class="project-links">
+                                <a href="https://github.com/karthick357/ShareBite" target="_blank"
+                                    rel="noopener noreferrer" class="project-link-btn">
+                                    <i class="devicon-github-original colored" style="font-size:1.1rem;"></i>
+                                    <span>GitHub Repo ↗</span>
+                                </a>
+                                <button class="inspect-btn" onclick="openArchModal('sharebite')">
+                                    <span>Inspect Architecture 🔍</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 2: Personal Portfolio Website -->
+                    <div class="glass-card reveal-on-scroll">
+                        <div>
+                            <div class="project-card-header">
+                                <span class="project-category-tag">Modern Web & UI/UX</span>
+                                <span
+                                    style="font-family:var(--font-mono);font-size:0.8rem;color:var(--text-dim);">Production</span>
+                            </div>
+                            <h3 class="project-title">Responsive Personal Portfolio Website</h3>
+                            <p class="project-desc">
+                                Designed and developed a responsive, high-performance personal portfolio website built
+                                with modern web principles to showcase software projects, technical skills, cloud
+                                certifications, and achievements.
+                            </p>
+
+                            <div class="project-highlights">
+                                <div class="p-highlight-row">
+                                    <span class="tag-dot"></span>
+                                    <span><strong>Modern Aesthetic Engine:</strong> Fluid Obsidian Dark and Clean Light
+                                        themes, glassmorphism design, and subtle micro-animations.</span>
+                                </div>
+                                <div class="p-highlight-row">
+                                    <span class="tag-dot"></span>
+                                    <span><strong>Interactive Features:</strong> Live terminal pipeline simulator,
+                                        interactive constellation particle background, and real-time IST clock.</span>
+                                </div>
+                            </div>
+
+                            <div class="project-tech-stack">
+                                <span class="tech-badge">HTML5</span>
+                                <span class="tech-badge">CSS3</span>
+                                <span class="tech-badge">JavaScript</span>
+                                <span class="tech-badge">Vanilla UI</span>
+                                <span class="tech-badge">Git & GitHub</span>
+                            </div>
+                        </div>
+
+                        <!-- Architecture Flow Visualization -->
+                        <div>
+                            <div class="project-viz-preview">
+                                <div class="viz-canvas-bar">
+                                    <span>Frontend Build Flow:</span>
+                                    <span style="color:var(--accent-cyan);">Responsive 100%</span>
+                                </div>
+                                <div class="pipeline-steps">
+                                    <div class="p-step active">1. Design System</div>
+                                    <div class="p-step active">2. Vanilla CSS</div>
+                                    <div class="p-step active">3. Dynamic JS</div>
+                                    <div class="p-step active">4. GitHub Host</div>
+                                </div>
+                            </div>
+
+                            <div class="project-links">
+                                <a href="https://github.com/karthick357/karthick-portfolio" target="_blank"
+                                    rel="noopener noreferrer" class="project-link-btn">
+                                    <i class="devicon-github-original colored" style="font-size:1.1rem;"></i>
+                                    <span>GitHub Repo ↗</span>
+                                </a>
+                                <button class="inspect-btn" onclick="openArchModal('portfolio')">
+                                    <span>Inspect Architecture 🔍</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 3: AWS Cloud & Gen-AI Sandbox -->
+                    <div class="glass-card reveal-on-scroll">
+                        <div>
+                            <div class="project-card-header">
+                                <span class="project-category-tag">Cloud Infrastructure & AI</span>
+                                <span style="font-family:var(--font-mono);font-size:0.8rem;color:var(--text-dim);">AWS
+                                    Educate</span>
+                            </div>
+                            <h3 class="project-title">AWS Cloud & Gen-AI Infrastructure Lab</h3>
+                            <p class="project-desc">
+                                Hands-on cloud prototypes and infrastructure pipelines engineered through 15+ AWS
+                                certified courses and the month-long 30 Days AWS Cloud Challenge, focusing on secure
+                                storage, compute, and Generative AI services.
+                            </p>
+
+                            <div class="project-highlights">
+                                <div class="p-highlight-row">
+                                    <span class="tag-dot"></span>
+                                    <span><strong>AWS Core Storage & Compute:</strong> Hands-on experience configuring
+                                        AWS S3 bucket policies, EC2 virtual instances, and IAM access controls.</span>
+                                </div>
+                                <div class="p-highlight-row">
+                                    <span class="tag-dot"></span>
+                                    <span><strong>Gen-AI & Cloud Architecture:</strong> Practical study of Generative AI
+                                        foundation models, prompt engineering, and cloud deployment pipelines.</span>
+                                </div>
+                            </div>
+
+                            <div class="project-tech-stack">
+                                <span class="tech-badge">AWS S3</span>
+                                <span class="tech-badge">AWS EC2</span>
+                                <span class="tech-badge">AWS Gen-AI</span>
+                                <span class="tech-badge">Linux (Cisco)</span>
+                                <span class="tech-badge">Cloud Security</span>
+                            </div>
+                        </div>
+
+                        <!-- Architecture Flow Visualization -->
+                        <div>
+                            <div class="project-viz-preview">
+                                <div class="viz-canvas-bar">
+                                    <span>Cloud Deployment:</span>
+                                    <span style="color:var(--accent-purple);">AWS Verified</span>
+                                </div>
+                                <div class="pipeline-steps">
+                                    <div class="p-step active">1. S3 Storage</div>
+                                    <div class="p-step active">2. EC2 Compute</div>
+                                    <div class="p-step active">3. GenAI API</div>
+                                    <div class="p-step active">4. Security IAM</div>
+                                </div>
+                            </div>
+
+                            <div class="project-links">
+                                <a href="https://www.linkedin.com/posts/dinesh-karthick-d-3507b134a_aws-awseducate-cloudcomputing-activity-7409479869811580928-UBzo"
+                                    target="_blank" rel="noopener noreferrer" class="project-link-btn">
+                                    <i class="devicon-linkedin-plain colored" style="font-size:1.1rem;"></i>
+                                    <span>View AWS Challenge ↗</span>
+                                </a>
+                                <button class="inspect-btn" onclick="openArchModal('aws')">
+                                    <span>Inspect Architecture 🔍</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==========================================================================
+         GITHUB ACTIVITY & REPOSITORY STATS SECTION
+         ========================================================================== -->
+        <section id="github-activity" style="background: var(--bg-surface);">
+            <div class="wrap">
+                <div class="section-header reveal-on-scroll">
+                    <span class="section-tag">Code Cadence</span>
+                    <h2 class="section-title">GitHub Activity & Contribution Metrics</h2>
+                    <p class="section-subtitle">Consistent coding cadence, repository development, and language
+                        distribution across open-source work.</p>
+                </div>
+
+                <div class="github-stats-card reveal-on-scroll">
+                    <div class="gh-header">
+                        <div class="gh-profile-badge">
+                            <div class="gh-avatar">
+                                <i class="devicon-github-original"></i>
+                            </div>
+                            <div>
+                                <div class="gh-profile-name">Dinesh Karthick D</div>
+                                <div class="gh-handle">github.com/karthick357</div>
+                            </div>
+                        </div>
+                        <a href="https://github.com/karthick357" target="_blank" rel="noopener noreferrer"
+                            class="btn btn-secondary btn-sm">
+                            <span>Follow on GitHub ↗</span>
+                        </a>
+                    </div>
+
+                    <!-- Simulated Contribution Heatmap -->
+                    <div class="commit-heatmap-wrap">
+                        <div class="commit-heatmap-title">
+                            <span>Contributions in the Last 6 Months (Active Streaks)</span>
+                            <span>240+ Contributions</span>
+                        </div>
+                        <div class="heatmap-grid" id="heatmapGrid">
+                            <!-- Generated dynamically via JS -->
+                        </div>
+                    </div>
+
+                    <!-- Language Breakdown Bar -->
+                    <div>
+                        <div
+                            style="font-size:0.85rem;font-weight:600;margin-bottom:8px;color:var(--text-muted);display:flex;justify-content:space-between;">
+                            <span>Top Languages Used</span>
+                            <span>Python Core & Web Stack</span>
+                        </div>
+                        <div class="lang-progress-bar">
+                            <div class="lang-segment" style="width: 50%; background: #3572A5;" title="Python 50%"></div>
+                            <div class="lang-segment" style="width: 25%; background: #F1E05A;" title="JavaScript 25%">
+                            </div>
+                            <div class="lang-segment" style="width: 15%; background: #E34C26;" title="HTML 15%"></div>
+                            <div class="lang-segment" style="width: 10%; background: #563D7C;" title="CSS 10%"></div>
+                        </div>
+                        <div class="lang-legend">
+                            <div class="legend-item"><span class="legend-dot" style="background:#3572A5;"></span> Python
+                                (50%)</div>
+                            <div class="legend-item"><span class="legend-dot" style="background:#F1E05A;"></span>
+                                JavaScript (25%)</div>
+                            <div class="legend-item"><span class="legend-dot" style="background:#E34C26;"></span> HTML
+                                (15%)</div>
+                            <div class="legend-item"><span class="legend-dot" style="background:#563D7C;"></span> CSS
+                                (10%)</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==========================================================================
+         EXPERIENCE TIMELINE
+         ========================================================================== -->
+        <section id="experience">
+            <div class="wrap">
+                <div class="section-header reveal-on-scroll">
+                    <span class="section-tag">Career Journey</span>
+                    <h2 class="section-title">Internships & Professional Experience</h2>
+                    <p class="section-subtitle">Practical industry exposure in modern web application engineering and
+                        artificial intelligence fundamentals.</p>
+                </div>
+
+                <div class="timeline-container">
+                    <!-- Experience 1: Pinnacle Labs -->
+                    <div class="timeline-item reveal-on-scroll">
+                        <div class="timeline-node"></div>
+                        <div class="tl-card">
+                            <div class="tl-header">
+                                <div>
+                                    <h3 class="tl-role">Web Development Intern</h3>
+                                    <div class="tl-company">Pinnacle Labs (Online)</div>
+                                </div>
+                                <span class="tl-date">1 Month</span>
+                            </div>
+
+                            <ul class="tl-bullet-list">
+                                <li>Gained comprehensive hands-on experience in basic and modern web development
+                                    workflows.</li>
+                                <li>Worked on designing, styling, and building responsive webpages and interactive user
+                                    interfaces using frontend tools.</li>
+                                <li>Adopted industry-standard layout principles, ensuring cross-browser compatibility
+                                    and optimized mobile rendering.</li>
+                            </ul>
+
+                            <div class="tl-tags">
+                                <span class="tech-badge">Web Development</span>
+                                <span class="tech-badge">HTML5</span>
+                                <span class="tech-badge">CSS3</span>
+                                <span class="tech-badge">JavaScript</span>
+                                <span class="tech-badge">Frontend Tools</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Experience 2: CodeAlpha -->
+                    <div class="timeline-item reveal-on-scroll">
+                        <div class="timeline-node"></div>
+                        <div class="tl-card">
+                            <div class="tl-header">
+                                <div>
+                                    <h3 class="tl-role">Artificial Intelligence Intern</h3>
+                                    <div class="tl-company">CodeAlpha (Online)</div>
+                                </div>
+                                <span class="tl-date">1 Month</span>
+                            </div>
+
+                            <ul class="tl-bullet-list">
+                                <li>Acquired structured hands-on experience in foundational AI and Machine Learning
+                                    principles.</li>
+                                <li>Built and tested functional web-based applications integrating intelligent logic
+                                    with frontend UI components.</li>
+                                <li>Explored practical problem-solving using intelligent algorithms, rapid prototyping,
+                                    and algorithmic workflows.</li>
+                            </ul>
+
+                            <div class="tl-tags">
+                                <span class="tech-badge">Artificial Intelligence</span>
+                                <span class="tech-badge">Machine Learning</span>
+                                <span class="tech-badge">Python</span>
+                                <span class="tech-badge">Frontend Integration</span>
+                                <span class="tech-badge">Prototyping</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==========================================================================
+         CERTIFICATIONS & ACHIEVEMENTS
+         ========================================================================== -->
+        <section id="certifications" style="background: var(--bg-surface);">
+            <div class="wrap">
+                <div class="section-header reveal-on-scroll">
+                    <span class="section-tag">Credentials</span>
+                    <h2 class="section-title">Certifications & Achievements</h2>
+                    <p class="section-subtitle">Verified credentials, cloud milestones, and recognized technical
+                        accomplishments.</p>
+                </div>
+
+                <div class="awards-grid">
+                    <!-- AWS 30 Days Cloud Challenge Banner -->
+                    <div class="skillrack-banner reveal-on-scroll">
+                        <div class="skillrack-info">
+                            <h3>
+                                <span>30 Days AWS Cloud Challenge</span>
+                                <span class="skillrack-badge">Verified on LinkedIn</span>
+                            </h3>
+                            <p>Successfully completed the month-long intensive hands-on AWS Educate Cloud Challenge
+                                covering cloud infrastructure, architecture best practices, storage solutions, and
+                                Generative AI.</p>
+                        </div>
+                        <a href="https://www.linkedin.com/posts/dinesh-karthick-d-3507b134a_aws-awseducate-cloudcomputing-activity-7409479869811580928-UBzo"
+                            target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">
+                            <span>View LinkedIn Post</span>
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                <polyline points="15 3 21 3 21 9"></polyline>
+                                <line x1="10" y1="14" x2="21" y2="3"></line>
+                            </svg>
+                        </a>
+                    </div>
+
+                    <!-- Cert 1: 15 AWS Courses -->
+                    <div class="award-card reveal-on-scroll">
+                        <div class="award-icon-box">☁️</div>
+                        <div class="award-details">
+                            <h4>15 AWS Courses Completed</h4>
+                            <div class="award-issuer">Amazon Web Services / AWS Educate</div>
+                            <p style="font-size:0.85rem;color:var(--text-muted);margin-bottom:8px;">
+                                Completed 15 comprehensive courses covering AWS Storage, Compute, Generative AI, and
+                                Security.
+                            </p>
+                            <a href="https://www.credly.com/users/dinesh-karthick-d" target="_blank"
+                                rel="noopener noreferrer" class="award-link">
+                                <span>View Verified Badges ↗</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Cert 2: NPTEL Python -->
+                    <div class="award-card reveal-on-scroll">
+                        <div class="award-icon-box">🐍</div>
+                        <div class="award-details">
+                            <h4>NPTEL Certification — Python</h4>
+                            <div class="award-issuer">NPTEL / IIT</div>
+                            <p style="font-size:0.85rem;color:var(--text-muted);margin-bottom:8px;">
+                                Rigorous certification on Python programming fundamentals, algorithmic problem solving,
+                                and data structures.
+                            </p>
+                            <span class="award-link" style="color:var(--accent-emerald);">Verified Coursework</span>
+                        </div>
+                    </div>
+
+                    <!-- Cert 3: Cisco Linux & Networking -->
+                    <div class="award-card reveal-on-scroll">
+                        <div class="award-icon-box">🌐</div>
+                        <div class="award-details">
+                            <h4>CISCO — Linux & Networking</h4>
+                            <div class="award-issuer">Cisco Networking Academy</div>
+                            <p style="font-size:0.85rem;color:var(--text-muted);margin-bottom:8px;">
+                                Certified in core Linux operating systems, terminal administration, TCP/IP protocols,
+                                and network routing.
+                            </p>
+                            <span class="award-link" style="color:var(--accent-cyan);">Verified Academy
+                                Credential</span>
+                        </div>
+                    </div>
+
+                    <!-- Cert 4: Credly Badges -->
+                    <div class="award-card reveal-on-scroll">
+                        <div class="award-icon-box">🎖️</div>
+                        <div class="award-details">
+                            <h4>Credly Verified Digital Badges</h4>
+                            <div class="award-issuer">Credly Badging Platform</div>
+                            <p style="font-size:0.85rem;color:var(--text-muted);margin-bottom:8px;">
+                                Official digital badge portfolio demonstrating verified cloud proficiencies and
+                                technical skills.
+                            </p>
+                            <a href="https://www.credly.com/users/dinesh-karthick-d" target="_blank"
+                                rel="noopener noreferrer" class="award-link">
+                                <span>credly.com/users/dinesh-karthick-d ↗</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Cert 5: Academic Distinction -->
+                    <div class="award-card reveal-on-scroll">
+                        <div class="award-icon-box">🎓</div>
+                        <div class="award-details">
+                            <h4>Academic Excellence — 8.4 CGPA</h4>
+                            <div class="award-issuer">St. Joseph's Institute of Technology</div>
+                            <p style="font-size:0.85rem;color:var(--text-muted);">
+                                Consistent top academic standing in Information Technology, demonstrating analytical
+                                rigor and commitment.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Cert 6: Curious in Gen-AI & Security -->
+                    <div class="award-card reveal-on-scroll">
+                        <div class="award-icon-box">🚀</div>
+                        <div class="award-details">
+                            <h4>Gen-AI & Cloud Security Explorer</h4>
+                            <div class="award-issuer">Self-Directed Engineering</div>
+                            <p style="font-size:0.85rem;color:var(--text-muted);">
+                                Continuously applying modern generative artificial intelligence concepts and cloud
+                                security protocols to real applications.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==========================================================================
+         CONTACT SECTION
+         ========================================================================== -->
+        <section id="contact">
+            <div class="wrap">
+                <div class="contact-container reveal-on-scroll">
+                    <div class="contact-grid">
+                        <!-- Contact Info Left -->
+                        <div>
+                            <div class="contact-header">
+                                <span class="section-tag">Let's Connect</span>
+                                <h2>Let's build reliable software together.</h2>
+                                <p>
+                                    I'm actively seeking software development, backend engineering, and cloud
+                                    opportunities. Whether you have an internship or full-time role to discuss, want to
+                                    collaborate on a project, or review my code, feel free to reach out!
+                                </p>
+                            </div>
+
+                            <div class="contact-methods">
+                                <!-- Email Card -->
+                                <div class="contact-item-card">
+                                    <div class="contact-item-left">
+                                        <div class="contact-icon">
+                                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+                                                stroke="currentColor" stroke-width="2">
+                                                <path
+                                                    d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z">
+                                                </path>
+                                                <polyline points="22,6 12,13 2,6"></polyline>
+                                            </svg>
+                                        </div>
+                                        <div class="contact-meta">
+                                            <span class="label">Email Address</span>
+                                            <span class="value">karthickd179@gmail.com</span>
+                                        </div>
+                                    </div>
+                                    <button class="copy-btn" data-copy="karthickd179@gmail.com">
+                                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none"
+                                            stroke="currentColor" stroke-width="2">
+                                            <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                                            <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                                        </svg>
+                                        <span>Copy</span>
+                                    </button>
+                                </div>
+
+                                <!-- Phone Card -->
+                                <div class="contact-item-card">
+                                    <div class="contact-item-left">
+                                        <div class="contact-icon">
+                                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+                                                stroke="currentColor" stroke-width="2">
+                                                <path
+                                                    d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+                                                </path>
+                                            </svg>
+                                        </div>
+                                        <div class="contact-meta">
+                                            <span class="label">Call / WhatsApp</span>
+                                            <span class="value">+91 9942166578</span>
+                                        </div>
+                                    </div>
+                                    <button class="copy-btn" data-copy="+919942166578">
+                                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none"
+                                            stroke="currentColor" stroke-width="2">
+                                            <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                                            <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                                        </svg>
+                                        <span>Copy</span>
+                                    </button>
+                                </div>
+
+                                <!-- GitHub Card -->
+                                <div class="contact-item-card">
+                                    <div class="contact-item-left">
+                                        <div class="contact-icon">
+                                            <i class="devicon-github-original colored" style="font-size:1.3rem;"></i>
+                                        </div>
+                                        <div class="contact-meta">
+                                            <span class="label">GitHub</span>
+                                            <span class="value">karthick357</span>
+                                        </div>
+                                    </div>
+                                    <a href="https://github.com/karthick357" target="_blank" rel="noopener noreferrer"
+                                        class="btn btn-ghost btn-sm" style="padding:6px 14px;">
+                                        <span>Visit ↗</span>
+                                    </a>
+                                </div>
+
+                                <!-- LinkedIn Card -->
+                                <div class="contact-item-card">
+                                    <div class="contact-item-left">
+                                        <div class="contact-icon">
+                                            <i class="devicon-linkedin-plain colored" style="font-size:1.3rem;"></i>
+                                        </div>
+                                        <div class="contact-meta">
+                                            <span class="label">LinkedIn</span>
+                                            <span class="value">Dinesh Karthick D</span>
+                                        </div>
+                                    </div>
+                                    <a href="https://www.linkedin.com/in/dinesh-karthick-d-3507b134a" target="_blank"
+                                        rel="noopener noreferrer" class="btn btn-ghost btn-sm"
+                                        style="padding:6px 14px;">
+                                        <span>Connect ↗</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Direct Message Form Right -->
+                        <div>
+                            <form class="contact-form" id="directMessageForm">
+                                <div class="form-group">
+                                    <label for="senderName">Your Name</label>
+                                    <input type="text" id="senderName" class="form-control"
+                                        placeholder="e.g. Alex Morgan" required>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="senderEmail">Email Address</label>
+                                    <input type="email" id="senderEmail" class="form-control"
+                                        placeholder="alex@company.com" required>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="messageSubject">Subject</label>
+                                    <input type="text" id="messageSubject" class="form-control"
+                                        placeholder="Software Developer Opportunity / Inquiry" required>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="messageBody">Message</label>
+                                    <textarea id="messageBody" class="form-control"
+                                        placeholder="Hi Dinesh, I came across your portfolio and would like to connect regarding..."
+                                        required></textarea>
+                                </div>
+
+                                <button type="submit" class="btn btn-primary" style="width:100%;">
+                                    <span>Send Message via Email</span>
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2">
+                                        <line x1="22" y1="2" x2="11" y2="13"></line>
+                                        <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                                    </svg>
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ==========================================================================
+       IN-PAGE PDF RESUME MODAL
+       ========================================================================== -->
+    <div class="modal-overlay" id="resumeModalOverlay" role="dialog" aria-modal="true"
+        aria-labelledby="resumeModalTitle">
+        <div class="modal-container">
+            <div class="modal-header">
+                <div class="modal-title" id="resumeModalTitle">
+                    Dinesh Karthick D — Official Resume PDF
+                </div>
+                <div style="display:flex;align-items:center;gap:10px;">
+                    <a href="DINESH KARTHICK D .pdf.pdf" class="btn btn-primary btn-sm"
+                        download="Dinesh_Karthick_Resume.pdf">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                            <polyline points="7 10 12 15 17 10"></polyline>
+                            <line x1="12" y1="15" x2="12" y2="3"></line>
+                        </svg>
+                        <span>Download</span>
+                    </a>
+                    <button class="modal-close-btn" id="closeResumeModalBtn" aria-label="Close modal">✕</button>
+                </div>
+            </div>
+            <div class="modal-body" style="padding:0;">
+                <iframe src="DINESH KARTHICK D .pdf.pdf#toolbar=1&navpanes=0" class="resume-iframe"
+                    title="Dinesh Karthick D Resume PDF">
+                    <p style="padding:20px;">Your browser does not support embedded PDFs. <a
+                            href="DINESH KARTHICK D .pdf.pdf" target="_blank">Download the PDF instead.</a></p>
+                </iframe>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==========================================================================
+       PROJECT ARCHITECTURE DEEP-DIVE MODAL
+       ========================================================================== -->
+    <div class="modal-overlay" id="archModalOverlay" role="dialog" aria-modal="true" aria-labelledby="archModalTitle">
+        <div class="modal-container">
+            <div class="modal-header">
+                <div class="modal-title" id="archModalTitle">
+                    System Architecture & Deep Dive
+                </div>
+                <button class="modal-close-btn" id="closeArchModalBtn" aria-label="Close architecture modal">✕</button>
+            </div>
+            <div class="modal-body">
+                <div class="arch-tab-group">
+                    <button class="arch-tab-btn active" id="archTabDiagramBtn"
+                        onclick="switchArchTab('diagram')">Architecture Diagram</button>
+                    <button class="arch-tab-btn" id="archTabApiBtn" onclick="switchArchTab('api')">API Endpoints &
+                        Schema</button>
+                    <button class="arch-tab-btn" id="archTabMetricsBtn" onclick="switchArchTab('metrics')">Performance
+                        Metrics</button>
+                </div>
+
+                <div id="archModalContent" class="arch-code-block">
+                    <!-- Dynamic Content Injected via JS -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==========================================================================
+       FOOTER
+       ========================================================================== -->
+    <footer>
+        <div class="wrap">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <a href="#top" class="brand-logo" style="margin-bottom:8px;">
+                        <span class="code-bracket">&lt;</span>Dinesh<span class="gradient-text">.dev</span><span
+                            class="code-bracket">/&gt;</span>
+                    </a>
+                    <p>Software Developer · Full-Stack & Cloud Enthusiast · Chennai, India</p>
+                </div>
+
+                <div class="footer-links">
+                    <a href="#about">About</a>
+                    <a href="#skills">Skills</a>
+                    <a href="#projects">Projects</a>
+                    <a href="#github-activity">Code Activity</a>
+                    <a href="#experience">Experience</a>
+                    <a href="#certifications">Certifications</a>
+                    <a href="DINESH KARTHICK D .pdf.pdf" target="_blank" rel="noopener"
+                        download="Dinesh_Karthick_Resume.pdf">Resume PDF</a>
+                </div>
+
+                <button class="back-to-top" id="backToTop" aria-label="Back to top" title="Back to top">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="18 15 12 9 6 15"></polyline>
+                    </svg>
+                </button>
+            </div>
+
+            <div class="footer-bottom">
+                <div>
+                    © <span id="currentYear"></span> Dinesh Karthick D. Built with modern web standards.
+                </div>
+                <div class="live-clock">
+                    <span class="indicator"></span>
+                    <span>Chennai, IN: </span>
+                    <span id="localClock">--:--:-- IST</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Toast Notification Container -->
+    <div id="toastContainer"></div>
+
+    <!-- ==========================================================================
+       JAVASCRIPT LOGIC & INTERACTIVE ENGINE
+       ========================================================================== -->
+    <script>
+        // 1. Current Year & Real-Time IST Clock
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+        function updateClock() {
+            const now = new Date();
+            const options = { timeZone: 'Asia/Kolkata', hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: true };
+            const timeStr = new Intl.DateTimeFormat('en-US', options).format(now);
+            const clockEl = document.getElementById('localClock');
+            if (clockEl) clockEl.textContent = timeStr + ' IST';
+        }
+        setInterval(updateClock, 1000);
+        updateClock();
+
+        // 2. Reading Progress Indicator
+        window.addEventListener('scroll', () => {
+            const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+            const scrolled = (window.scrollY / docHeight) * 100;
+            const progressBar = document.getElementById('readingProgress');
+            if (progressBar) progressBar.style.width = scrolled + '%';
+        });
+
+        // 3. Theme Toggle (Obsidian Dark / Clean Light)
+        const root = document.documentElement;
+        const themeToggle = document.getElementById('themeToggle');
+        const savedTheme = localStorage.getItem('dinesh_portfolio_theme');
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        const initialTheme = savedTheme || (prefersDark ? 'dark' : 'light');
+
+        function applyTheme(theme) {
+            if (theme === 'dark') {
+                root.setAttribute('data-theme', 'dark');
+                themeToggle.setAttribute('aria-label', 'Switch to clean light theme');
+            } else {
+                root.setAttribute('data-theme', 'light');
+                themeToggle.setAttribute('aria-label', 'Switch to obsidian dark theme');
+            }
+        }
+        applyTheme(initialTheme);
+
+        themeToggle.addEventListener('click', () => {
+            const current = root.getAttribute('data-theme');
+            const nextTheme = current === 'dark' ? 'light' : 'dark';
+            applyTheme(nextTheme);
+            localStorage.setItem('dinesh_portfolio_theme', nextTheme);
+            showToast(nextTheme === 'dark' ? 'Switched to Obsidian Dark theme' : 'Switched to Clean Light theme');
+        });
+
+        // 4. Mobile Menu Navigation Toggle
+        const mobileToggle = document.getElementById('mobileToggle');
+        const navMenu = document.getElementById('navMenu');
+
+        mobileToggle.addEventListener('click', () => {
+            const isOpen = navMenu.classList.toggle('open');
+            mobileToggle.setAttribute('aria-expanded', isOpen);
+        });
+
+        navMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('open');
+                mobileToggle.setAttribute('aria-expanded', 'false');
+            });
+        });
+
+        // 5. Dynamic Role Typer
+        const roles = [
+            "Software Developer",
+            "Full-Stack & Backend Builder",
+            "Python & Flask Specialist",
+            "AWS Cloud Enthusiast",
+            "AI & Gen-AI Explorer"
+        ];
+        let roleIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+        const typerEl = document.getElementById('roleTyper');
+
+        function typeEffect() {
+            const currentRole = roles[roleIndex];
+            if (isDeleting) {
+                typerEl.textContent = currentRole.substring(0, charIndex - 1);
+                charIndex--;
+            } else {
+                typerEl.textContent = currentRole.substring(0, charIndex + 1);
+                charIndex++;
+            }
+
+            let speed = isDeleting ? 36 : 70;
+
+            if (!isDeleting && charIndex === currentRole.length) {
+                speed = 2000;
+                isDeleting = true;
+            } else if (isDeleting && charIndex === 0) {
+                isDeleting = false;
+                roleIndex = (roleIndex + 1) % roles.length;
+                speed = 350;
+            }
+
+            setTimeout(typeEffect, speed);
+        }
+        typeEffect();
+
+        // 6. Interactive Terminal Tabs & Execution Simulator + CLI
+        const terminalSnippets = {
+            'tab-sharebite': `<span class="code-comment"># Dinesh Karthick D — ShareBite Full-Stack Platform</span>
+<span class="code-keyword">from</span> flask <span class="code-keyword">import</span> Flask, request, jsonify
+<span class="code-keyword">from</span> pymongo <span class="code-keyword">import</span> MongoClient
+
+app = <span class="code-fn">Flask</span>(__name__)
+client = <span class="code-fn">MongoClient</span>(<span class="code-str">"mongodb+srv://dinesh:cluster.mongodb.net"</span>)
+db = client[<span class="code-str">"sharebite_db"</span>]
+
+<span class="code-comment"># Surplus donation dispatch API endpoint</span>
+<span class="code-keyword">@app.route</span>(<span class="code-str">"/api/v1/donate"</span>, methods=[<span class="code-str">"POST"</span>])
+<span class="code-keyword">def</span> <span class="code-fn">dispatch_donation</span>():
+    payload = request.<span class="code-fn">get_json</span>()
+    record = db.donations.<span class="code-fn">insert_one</span>(payload)
+    <span class="code-keyword">return</span> <span class="code-fn">jsonify</span>({<span class="code-str">"status"</span>: <span class="code-str">"matched"</span>, <span class="code-str">"id"</span>: <span class="code-fn">str</span>(record.inserted_id)})
+<span class="code-comment">&gt;&gt;&gt; Ready. Click "Run Pipeline" or type below!</span>`,
+
+            'tab-aws': `<span class="code-comment"># Dinesh Karthick D — AWS Cloud & Gen-AI Ops</span>
+<span class="code-keyword">import</span> boto3
+
+s3 = boto3.<span class="code-fn">client</span>(<span class="code-str">"s3"</span>, region_name=<span class="code-str">"ap-south-1"</span>)
+bedrock = boto3.<span class="code-fn">client</span>(<span class="code-str">"bedrock-runtime"</span>, region_name=<span class="code-str">"us-east-1"</span>)
+
+<span class="code-comment"># 1. Verify encrypted cloud storage</span>
+s3.<span class="code-fn">head_bucket</span>(Bucket=<span class="code-str">"sharebite-production-vault"</span>)
+
+<span class="code-comment"># 2. Invoke Gen-AI Foundation Model for surplus forecast</span>
+response = bedrock.<span class="code-fn">invoke_model</span>(
+    modelId=<span class="code-str">"anthropic.claude-3-haiku"</span>,
+    body=<span class="code-str">'{"prompt":"Estimate optimal shelter delivery routes"}'</span>
+)
+<span class="code-comment">&gt;&gt;&gt; Ready. Click "Run Pipeline" to simulate AWS execution.</span>`,
+
+            'tab-cisco': `<span class="code-comment"># Dinesh Karthick D — Cisco Linux & Networking Audit</span>
+#!/usr/bin/env bash
+echo <span class="code-str">"[+] Verifying Linux kernel network interfaces..."</span>
+ip route show default | awk '{print "Gateway: " $3}'
+
+echo <span class="code-str">"[+] Verifying active application sockets (Flask :5000)..."</span>
+ss -tuln | grep <span class="code-str">":5000"</span>
+
+echo <span class="code-str">"[+] Testing round-trip latency to AWS ap-south-1..."</span>
+ping -c 3 s3.ap-south-1.amazonaws.com
+<span class="code-comment">&gt;&gt;&gt; Ready. Click "Run Pipeline" to audit network latency.</span>`,
+
+            'tab-cli': `<span class="code-comment"># Dinesh Karthick Interactive Terminal Shell v2.4</span>
+<span style="color:#10B981;">Type commands below to interact with this portfolio directly:</span>
+  • <span class="code-fn">help</span>        : List available shell commands
+  • <span class="code-fn">about</span>       : Overview of Dinesh Karthick D
+  • <span class="code-fn">skills</span>      : Technical skill matrix
+  • <span class="code-fn">projects</span>    : Showcase of full-stack & cloud projects
+  • <span class="code-fn">resume</span>      : Open official resume viewer
+  • <span class="code-fn">sudo hire</span>   : Quick recruiter contact workflow
+  • <span class="code-fn">clear</span>       : Clear terminal window`
+        };
+
+        const terminalTabs = document.querySelectorAll('.terminal-tab-btn');
+        const terminalOutput = document.getElementById('terminalOutput');
+        const runTerminalBtn = document.getElementById('runTerminalBtn');
+        const terminalStatus = document.getElementById('terminalStatus');
+        const terminalCliInput = document.getElementById('terminalCliInput');
+        let activeTabId = 'tab-sharebite';
+
+        terminalTabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                terminalTabs.forEach(t => t.classList.remove('active'));
+                tab.classList.add('active');
+                activeTabId = tab.getAttribute('data-tab');
+                terminalOutput.innerHTML = terminalSnippets[activeTabId];
+                terminalStatus.textContent = 'Status: Idle';
+                terminalStatus.style.color = 'var(--text-dim)';
+                if (activeTabId === 'tab-cli') {
+                    terminalCliInput.focus();
+                }
+            });
+        });
+
+        runTerminalBtn.addEventListener('click', () => {
+            terminalStatus.textContent = 'Status: Executing...';
+            terminalStatus.style.color = '#F59E0B';
+            terminalOutput.innerHTML += `\n<span style="color:#93C5FD;">⚙ [PROCESS] Initializing execution runtime...</span>`;
+
+            setTimeout(() => {
+                if (activeTabId === 'tab-sharebite') {
+                    terminalOutput.innerHTML += `\n<span style="color:#10B981;">✔ [FLASK API] HTTP 200 OK — Surplus donation payload received from donor</span>`;
+                    terminalOutput.innerHTML += `\n<span style="color:#38BDF8;">✔ [MONGODB] Document committed: ID #65d4b892a01 — Quantity: 45 portions</span>`;
+                    terminalOutput.innerHTML += `\n<span style="color:#A78BFA;">✔ [DISPATCH] Automated alert sent to Hope Orphanage (Recipient matched in 0.18s)</span>`;
+                } else if (activeTabId === 'tab-aws') {
+                    terminalOutput.innerHTML += `\n<span style="color:#10B981;">✔ [AWS S3] Bucket "sharebite-production-vault" verified (AES-256 Encrypted)</span>`;
+                    terminalOutput.innerHTML += `\n<span style="color:#38BDF8;">✔ [AWS BEDROCK] Model response generated (Tokens: 142, Latency: 312ms)</span>`;
+                    terminalOutput.innerHTML += `\n<span style="color:#A78BFA;">✔ [CLOUD] Compute metrics healthy. 30 Days Cloud Challenge validation pass.</span>`;
+                } else if (activeTabId === 'tab-cisco') {
+                    terminalOutput.innerHTML += `\n<span style="color:#10B981;">✔ [CISCO LINUX] Gateway: 192.168.1.1 (eth0 Link UP 1000Mbps full-duplex)</span>`;
+                    terminalOutput.innerHTML += `\n<span style="color:#38BDF8;">✔ [SOCKETS] Flask API listening on 0.0.0.0:5000 (State: LISTEN)</span>`;
+                    terminalOutput.innerHTML += `\n<span style="color:#A78BFA;">✔ [PING] 3 packets transmitted, 0% loss, rtt min/avg = 14.2/16.1 ms</span>`;
+                } else {
+                    terminalOutput.innerHTML += `\n<span style="color:#10B981;">✔ [SHELL] System healthy. Type 'help' to see options!</span>`;
+                }
+                terminalStatus.textContent = 'Status: Completed (0.35s)';
+                terminalStatus.style.color = '#10B981';
+                terminalOutput.scrollTop = terminalOutput.scrollHeight;
+            }, 650);
+        });
+
+        // Interactive CLI Input Listener
+        terminalCliInput.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter') {
+                const cmd = terminalCliInput.value.trim().toLowerCase();
+                terminalCliInput.value = '';
+                if (!cmd) return;
+
+                terminalOutput.innerHTML += `\n<span style="color:#10B981;">dinesh@portfolio:~$</span> <span style="color:#FFFFFF;font-weight:600;">${cmd}</span>`;
+
+                if (cmd === 'help') {
+                    terminalOutput.innerHTML += `\n<span style="color:#93C5FD;">Available Commands:</span>
+  • <span class="code-fn">about</span>       : Dinesh Karthick's academic & professional background
+  • <span class="code-fn">skills</span>      : List primary programming & cloud skills
+  • <span class="code-fn">projects</span>    : List featured software & cloud projects
+  • <span class="code-fn">experience</span>  : Internships at Pinnacle Labs & CodeAlpha
+  • <span class="code-fn">certs</span>       : AWS, NPTEL Python, Cisco Linux & Networking
+  • <span class="code-fn">resume</span>      : Open the in-page PDF Resume Viewer modal
+  • <span class="code-fn">contact</span>     : Display email & phone contact info
+  • <span class="code-fn">sudo hire</span>   : Recruiter priority action
+  • <span class="code-fn">theme</span>       : Toggle dark/light theme
+  • <span class="code-fn">clear</span>       : Clean terminal screen`;
+                } else if (cmd === 'about') {
+                    terminalOutput.innerHTML += `\n<span style="color:#F1F5F9;">Dinesh Karthick D — B.Tech Information Technology at St. Joseph's Institute of Technology (8.4 CGPA). Passionate about backend systems, Python, Flask, MongoDB, AWS Cloud, and Gen-AI.</span>`;
+                } else if (cmd === 'skills') {
+                    terminalOutput.innerHTML += `\n<span style="color:#FBBF24;">[Languages]</span> Python, Java, C, SQL (MySQL)
+<span style="color:#60A5FA;">[Web & Backend]</span> HTML5, CSS3, JavaScript, Flask, PyMongo, RESTful APIs
+<span style="color:#34D399;">[Cloud & AI]</span> AWS S3, EC2, Generative AI, Cisco Linux & Networking`;
+                } else if (cmd === 'projects') {
+                    terminalOutput.innerHTML += `\n<span style="color:#93C5FD;">1. SHAREBITE:</span> Full-stack surplus food redistribution platform (Flask, MongoDB, PyMongo)
+<span style="color:#93C5FD;">2. PORTFOLIO WEBSITE:</span> Modern glassmorphism UI with interactive tools (HTML5, CSS3, JS)
+<span style="color:#93C5FD;">3. AWS CLOUD SANDBOX:</span> 15+ AWS courses & 30 Days Cloud Challenge architecture lab`;
+                } else if (cmd === 'experience') {
+                    terminalOutput.innerHTML += `\n<span style="color:#A78BFA;">• Pinnacle Labs:</span> Web Development Intern (Frontend web tools & responsive design)
+<span style="color:#A78BFA;">• CodeAlpha:</span> Artificial Intelligence Intern (AI/ML fundamentals & web prototyping)`;
+                } else if (cmd === 'certs') {
+                    terminalOutput.innerHTML += `\n<span style="color:#10B981;">• 15 AWS Courses Completed (Storage, Compute, GenAI)</span>
+<span style="color:#10B981;">• 30 Days AWS Cloud Challenge (LinkedIn Verified)</span>
+<span style="color:#10B981;">• NPTEL Certification in Python</span>
+<span style="color:#10B981;">• CISCO Linux & Networking Academy Credential</span>
+<span style="color:#10B981;">• Credly Verified Digital Badges (credly.com/users/dinesh-karthick-d)</span>`;
+                } else if (cmd === 'resume') {
+                    openResumeModal();
+                    terminalOutput.innerHTML += `\n<span style="color:#10B981;">✔ Opening official resume modal...</span>`;
+                } else if (cmd === 'contact') {
+                    terminalOutput.innerHTML += `\n<span style="color:#93C5FD;">Email:</span> karthickd179@gmail.com
+<span style="color:#93C5FD;">Phone:</span> +91 9942166578
+<span style="color:#93C5FD;">GitHub:</span> github.com/karthick357
+<span style="color:#93C5FD;">LinkedIn:</span> linkedin.com/in/dinesh-karthick-d-3507b134a`;
+                } else if (cmd === 'sudo hire' || cmd === 'hire' || cmd === 'sudo hire dinesh') {
+                    terminalOutput.innerHTML += `\n<span style="color:#F472B6;font-weight:bold;">🎉 OFFER INITIATION CONFIRMED!</span>
+<span style="color:#10B981;">Thank you for your interest in Dinesh Karthick D! Redirecting to contact section...</span>`;
+                    showToast('Redirecting to contact form...');
+                    document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
+                } else if (cmd === 'theme') {
+                    themeToggle.click();
+                    terminalOutput.innerHTML += `\n<span style="color:#38BDF8;">✔ Theme toggled successfully!</span>`;
+                } else if (cmd === 'clear') {
+                    terminalOutput.innerHTML = `<span class="code-comment"># Terminal screen cleared. Type 'help' for commands.</span>`;
+                } else {
+                    terminalOutput.innerHTML += `\n<span style="color:#EF4444;">Command not found: '${cmd}'. Type 'help' for available commands.</span>`;
+                }
+
+                terminalOutput.scrollTop = terminalOutput.scrollHeight;
+            }
+        });
+
+        // 7. Skills Matrix Filter Tabs
+        const filterButtons = document.querySelectorAll('.skill-filter-btn');
+        const skillCards = document.querySelectorAll('.skill-category-card');
+
+        filterButtons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterButtons.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                const filter = btn.getAttribute('data-filter');
+
+                skillCards.forEach(card => {
+                    const group = card.getAttribute('data-group');
+                    if (filter === 'all' || group === filter) {
+                        card.style.display = 'block';
+                        setTimeout(() => { card.style.opacity = '1'; card.style.transform = 'translateY(0)'; }, 40);
+                    } else {
+                        card.style.opacity = '0';
+                        card.style.transform = 'translateY(10px)';
+                        setTimeout(() => { card.style.display = 'none'; }, 200);
+                    }
+                });
+            });
+        });
+
+        // 8. Animated Counters
+        let countersStarted = false;
+        function startCounters() {
+            const counters = document.querySelectorAll('.counter');
+            counters.forEach(counter => {
+                const target = parseFloat(counter.getAttribute('data-target'));
+                const isDecimal = target % 1 !== 0;
+                const duration = 1500;
+                const startTime = performance.now();
+
+                function updateCounter(currentTime) {
+                    const elapsed = currentTime - startTime;
+                    const progress = Math.min(elapsed / duration, 1);
+                    const easeOut = 1 - Math.pow(1 - progress, 3);
+                    const current = target * easeOut;
+
+                    counter.textContent = isDecimal ? current.toFixed(1) : Math.floor(current);
+
+                    if (progress < 1) {
+                        requestAnimationFrame(updateCounter);
+                    } else {
+                        counter.textContent = isDecimal ? target.toFixed(1) : target;
+                    }
+                }
+                requestAnimationFrame(updateCounter);
+            });
+        }
+
+        // 9. Intersection Observer for Scroll Reveals
+        const revealEls = document.querySelectorAll('.reveal-on-scroll');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('revealed');
+                    if (!countersStarted && entry.target.querySelector('.counter')) {
+                        countersStarted = true;
+                        startCounters();
+                    }
+                }
+            });
+        }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+        revealEls.forEach(el => observer.observe(el));
+
+        setTimeout(() => {
+            if (!countersStarted) {
+                countersStarted = true;
+                startCounters();
+            }
+        }, 400);
+
+        // 10. Generate GitHub Contribution Heatmap Grid
+        (function generateHeatmap() {
+            const grid = document.getElementById('heatmapGrid');
+            if (!grid) return;
+            const totalCells = 26 * 7; // 26 weeks, 7 days
+            const levels = ['lvl-0', 'lvl-1', 'lvl-2', 'lvl-3', 'lvl-4'];
+
+            for (let i = 0; i < totalCells; i++) {
+                const cell = document.createElement('div');
+                cell.className = 'heatmap-cell';
+                const rand = Math.random();
+                if (rand > 0.85) cell.classList.add('lvl-4');
+                else if (rand > 0.65) cell.classList.add('lvl-3');
+                else if (rand > 0.45) cell.classList.add('lvl-2');
+                else if (rand > 0.25) cell.classList.add('lvl-1');
+                grid.appendChild(cell);
+            }
+        })();
+
+        // 11. Copy to Clipboard Utility with Toast
+        function showToast(message) {
+            const container = document.getElementById('toastContainer');
+            const toast = document.createElement('div');
+            toast.className = 'toast';
+            toast.innerHTML = `
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2.5">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+                <span>${message}</span>
+            `;
+            container.appendChild(toast);
+
+            setTimeout(() => {
+                toast.style.opacity = '0';
+                toast.style.transform = 'translateY(15px)';
+                toast.style.transition = 'all 0.3s ease';
+                setTimeout(() => toast.remove(), 300);
+            }, 3000);
+        }
+
+        document.querySelectorAll('.copy-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const textToCopy = btn.getAttribute('data-copy');
+                navigator.clipboard.writeText(textToCopy).then(() => {
+                    showToast(`Copied "${textToCopy}" to clipboard!`);
+                }).catch(() => {
+                    showToast('Failed to copy. Please copy manually.');
+                });
+            });
+        });
+
+        // 12. In-Page Resume Modal Logic
+        const resumeModal = document.getElementById('resumeModalOverlay');
+        const openResumeModalBtn = document.getElementById('openResumeModalBtn');
+        const heroResumeBtn = document.getElementById('heroResumeBtn');
+        const closeResumeModalBtn = document.getElementById('closeResumeModalBtn');
+
+        function openResumeModal() {
+            resumeModal.style.display = 'flex';
+            setTimeout(() => resumeModal.classList.add('active'), 10);
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeResumeModal() {
+            resumeModal.classList.remove('active');
+            setTimeout(() => {
+                resumeModal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }, 300);
+        }
+
+        if (openResumeModalBtn) openResumeModalBtn.addEventListener('click', openResumeModal);
+        if (heroResumeBtn) heroResumeBtn.addEventListener('click', openResumeModal);
+        if (closeResumeModalBtn) closeResumeModalBtn.addEventListener('click', closeResumeModal);
+        resumeModal.addEventListener('click', (e) => {
+            if (e.target === resumeModal) closeResumeModal();
+        });
+
+        // 13. Project Architecture Deep Dive Modal Logic
+        const archModal = document.getElementById('archModalOverlay');
+        const archModalTitle = document.getElementById('archModalTitle');
+        const archModalContent = document.getElementById('archModalContent');
+        const closeArchModalBtn = document.getElementById('closeArchModalBtn');
+
+        let currentArchProject = 'sharebite';
+        let currentArchTab = 'diagram';
+
+        const archData = {
+            'sharebite': {
+                'title': 'SHAREBITE — System Architecture & Deep Dive',
+                'diagram': `[Donor Client UI: HTML5/CSS3/JS]
+       │
+       ▼ (HTTPS POST /api/v1/donations)
+[Flask REST API Gateway (Python)] ───► [Auth & Schema Validator]
+       │
+       ▼ (PyMongo Driver)
+[MongoDB Atlas Document Cluster]
+       │
+       ├─► collection: "donations" (food surplus records, expiry times)
+       ├─► collection: "recipients" (orphanage/shelter requests & geo-radius)
+       ▼
+[Recipient Match Engine] ──► Automated Dispatch Notification to Shelter Volunteers`,
+                'api': `// POST /api/v1/donate
+{
+  "donor_id": "rest_orchid_banquets_01",
+  "food_type": "Cooked Meals (Surplus Catering)",
+  "servings": 60,
+  "prepared_at": "2026-09-07T18:30:00Z",
+  "safe_until": "2026-09-08T00:00:00Z",
+  "location": { "lat": 13.0827, "lng": 80.2707, "address": "Chennai, TN" },
+  "status": "pending_pickup"
+}
+
+// Response: 201 Created
+{ "status": "matched", "match_id": "shelter_hope_04", "eta_minutes": 22 }`,
+                'metrics': `• Average REST API Latency: 38ms
+• MongoDB Query Indexing: Compound index on (status, safe_until)
+• Food Waste Reduction: Enables same-evening surplus matching
+• Tech: Python, Flask, MongoDB, PyMongo, HTML5, CSS3, JavaScript`
+            },
+            'portfolio': {
+                'title': 'Modern Portfolio — Architecture & Performance',
+                'diagram': `[Visitor Browser]
+       │
+       ▼
+[Responsive CSS3 Design System & Theme Engine]
+       │
+       ├─► Obsidian Dark / Clean Light variables (--bg-base, --primary, etc.)
+       ├─► Glassmorphism Blur Layers & Glowing Gradients
+       ▼
+[Dynamic Vanilla JavaScript Engine]
+       ├─► 2D Canvas Neural Particle Constellation with Mouse Interactivity
+       ├─► Live Shell CLI Simulator (Command parser: about, skills, hire)
+       ├─► Real-Time Indian Standard Time (IST) Synchronizer
+       ▼
+[Static Web Standards & Zero Framework Bloat (100% Lighthouse Score)]`,
+                'api': `// Local Theme State Persistence
+localStorage.setItem("dinesh_portfolio_theme", "dark" | "light");
+
+// Terminal Command Registry
+const commandDispatcher = {
+  "help": () => renderCommandList(),
+  "skills": () => renderSkillsMatrix(),
+  "sudo hire": () => triggerRecruiterWorkflow()
+};`,
+                'metrics': `• Zero external heavy runtime dependencies (pure HTML/CSS/Vanilla JS)
+• First Contentful Paint: < 0.4s
+• 60 FPS Canvas Particle Constellation Animation
+• Cross-browser tested & accessible semantic hierarchy`
+            },
+            'aws': {
+                'title': 'AWS Cloud & Gen-AI Lab — Architecture',
+                'diagram': `[Developer / Client Trigger]
+       │
+       ▼ (IAM Authenticated via Boto3)
+[AWS Identity & Access Management (IAM)]
+       │
+       ├─► [AWS S3 Bucket: "sharebite-production-vault"] (AES-256 Encrypted)
+       │       └── Automated Life-cycle rules for log archival
+       │
+       ├─► [AWS EC2 Compute Instance] (Linux AMI)
+       │       └── Running microservices & background daemons
+       │
+       ▼
+[Amazon Bedrock / Generative AI Runtime]
+       └── Foundation Model Prompt Execution for Surplus Forecasting & Route Planning`,
+                'api': `# Boto3 AWS S3 & Bedrock Invocation
+import boto3
+
+s3 = boto3.client('s3', region_name='ap-south-1')
+bedrock = boto3.client('bedrock-runtime', region_name='us-east-1')
+
+s3.upload_file("surplus_report.json", "sharebite-production-vault", "reports/today.json")
+response = bedrock.invoke_model(
+    modelId="anthropic.claude-3-haiku",
+    body='{"prompt": "Predict optimum redistribution routes"}'
+)`,
+                'metrics': `• 15 AWS Courses Completed across Storage, Compute & Gen-AI
+• 30 Days Cloud Challenge Completed & Verified on LinkedIn
+• CISCO Linux & Networking verified security configurations`
+            }
+        };
+
+        window.openArchModal = function (projectId) {
+            currentArchProject = projectId;
+            currentArchTab = 'diagram';
+            archModalTitle.textContent = archData[projectId].title;
+            switchArchTab('diagram');
+            archModal.style.display = 'flex';
+            setTimeout(() => archModal.classList.add('active'), 10);
+            document.body.style.overflow = 'hidden';
+        };
+
+        window.switchArchTab = function (tabName) {
+            currentArchTab = tabName;
+            document.getElementById('archTabDiagramBtn').classList.toggle('active', tabName === 'diagram');
+            document.getElementById('archTabApiBtn').classList.toggle('active', tabName === 'api');
+            document.getElementById('archTabMetricsBtn').classList.toggle('active', tabName === 'metrics');
+            archModalContent.textContent = archData[currentArchProject][tabName];
+        };
+
+        function closeArchModal() {
+            archModal.classList.remove('active');
+            setTimeout(() => {
+                archModal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }, 300);
+        }
+
+        if (closeArchModalBtn) closeArchModalBtn.addEventListener('click', closeArchModal);
+        archModal.addEventListener('click', (e) => {
+            if (e.target === archModal) closeArchModal();
+        });
+
+        // Global Esc Key Listener for Modals
+        window.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                if (resumeModal.classList.contains('active')) closeResumeModal();
+                if (archModal.classList.contains('active')) closeArchModal();
+            }
+        });
+
+        // 14. Contact Form Mailto Handler
+        document.getElementById('directMessageForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const name = document.getElementById('senderName').value;
+            const email = document.getElementById('senderEmail').value;
+            const subject = document.getElementById('messageSubject').value;
+            const body = document.getElementById('messageBody').value;
+
+            const mailtoLink = `mailto:karthickd179@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent("From: " + name + " (" + email + ")\n\n" + body)}`;
+            window.location.href = mailtoLink;
+            showToast('Opening your default email client...');
+        });
+
+        // 15. Back to Top Button
+        document.getElementById('backToTop').addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // 16. Interactive Neural Canvas (Connected Particles with Mouse Gravity)
+        (function initNeuralCanvas() {
+            const canvas = document.getElementById('neuralCanvas');
+            if (!canvas) return;
+            const ctx = canvas.getContext('2d');
+            let width, height;
+            let particles = [];
+            let mouse = { x: null, y: null, maxDist: 140 };
+
+            function resize() {
+                width = canvas.width = window.innerWidth;
+                height = canvas.height = window.innerHeight;
+            }
+            window.addEventListener('resize', resize);
+            resize();
+
+            window.addEventListener('mousemove', (e) => {
+                mouse.x = e.clientX;
+                mouse.y = e.clientY;
+            });
+
+            window.addEventListener('mouseout', () => {
+                mouse.x = null;
+                mouse.y = null;
+            });
+
+            const particleCount = Math.min(Math.floor(window.innerWidth / 22), 50);
+
+            class Particle {
+                constructor() {
+                    this.x = Math.random() * width;
+                    this.y = Math.random() * height;
+                    this.vx = (Math.random() - 0.5) * 0.7;
+                    this.vy = (Math.random() - 0.5) * 0.7;
+                    this.radius = Math.random() * 2 + 1;
+                }
+                update() {
+                    this.x += this.vx;
+                    this.y += this.vy;
+
+                    if (this.x < 0 || this.x > width) this.vx *= -1;
+                    if (this.y < 0 || this.y > height) this.vy *= -1;
+
+                    if (mouse.x !== null && mouse.y !== null) {
+                        const dx = mouse.x - this.x;
+                        const dy = mouse.y - this.y;
+                        const dist = Math.sqrt(dx * dx + dy * dy);
+                        if (dist < mouse.maxDist) {
+                            const force = (mouse.maxDist - dist) / mouse.maxDist;
+                            this.x -= (dx / dist) * force * 1.8;
+                            this.y -= (dy / dist) * force * 1.8;
+                        }
+                    }
+                }
+                draw(isDark) {
+                    ctx.beginPath();
+                    ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+                    ctx.fillStyle = isDark ? 'rgba(99, 102, 241, 0.45)' : 'rgba(59, 130, 246, 0.35)';
+                    ctx.fill();
+                }
+            }
+
+            for (let i = 0; i < particleCount; i++) {
+                particles.push(new Particle());
+            }
+
+            function animate() {
+                ctx.clearRect(0, 0, width, height);
+                const isDark = root.getAttribute('data-theme') === 'dark';
+
+                for (let i = 0; i < particles.length; i++) {
+                    particles[i].update();
+                    particles[i].draw(isDark);
+
+                    for (let j = i + 1; j < particles.length; j++) {
+                        const dx = particles[i].x - particles[j].x;
+                        const dy = particles[i].y - particles[j].y;
+                        const dist = Math.sqrt(dx * dx + dy * dy);
+
+                        if (dist < 110) {
+                            const alpha = (1 - dist / 110) * (isDark ? 0.18 : 0.12);
+                            ctx.beginPath();
+                            ctx.moveTo(particles[i].x, particles[i].y);
+                            ctx.lineTo(particles[j].x, particles[j].y);
+                            ctx.strokeStyle = isDark ? `rgba(99, 102, 241, ${alpha})` : `rgba(59, 130, 246, ${alpha})`;
+                            ctx.lineWidth = 1;
+                            ctx.stroke();
+                        }
+                    }
+                }
+                requestAnimationFrame(animate);
+            }
+            animate();
+        })();
+    </script>
+</body>
+
+</html>
