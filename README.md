@@ -1,4 +1,3 @@
-Here is an enhanced, highly detailed, and interactive `README.md` designed to make your portfolio repository stand out to recruiters and developers:
 
 ```markdown
 <div align="center">
